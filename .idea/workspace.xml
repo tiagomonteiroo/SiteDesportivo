@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Tentativa 1">
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Ficheiro BD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/siteclube/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/siteclube/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +140,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714220260331</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Alteração das DIRS">
+      <option name="closed" value="true" />
+      <created>1714220595616</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714220595616</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ficheiro BD">
+      <option name="closed" value="true" />
+      <created>1714220624275</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714220624275</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -147,6 +166,8 @@
     <MESSAGE value="Estabelecimento de conexão, dos urls, entre server e app" />
     <MESSAGE value="Estabelecidas as ligações entre as views da app e os templates(HTML'S)" />
     <MESSAGE value="Tentativa 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tentativa 1" />
+    <MESSAGE value="Alteração das DIRS" />
+    <MESSAGE value="Ficheiro BD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ficheiro BD" />
   </component>
 </project>
