@@ -1,8 +1,22 @@
-from django.shortcuts import render
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def homepage(request):
     return render(request, 'clubehome/homepage.html')
+
+def auth_login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user=authenticate(request, username=username,password=password)
+        if user is not None:
+            login(request,user)
+            return redirect('homepage')
+        else:
+            error_message = "Nome de usuário ou senha incorretos."
+            return render(request, 'clubehome/login.html', {'error_message': error_message})
+    return render(request,'clubehome/login.html' )
 
 def loja(request):
     return render(request, "clubehome/loja.html")
