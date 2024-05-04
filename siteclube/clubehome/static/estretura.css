@@ -5,12 +5,22 @@ padding: 0px;
 }
 
 header{
-background-color: blue;
-padding: 10 px;
+background-color: lightgray;
+padding: 20px 0;
 }
 
-h1 {
-    background-color: blue;
-    padding: 10px;
+.header-logo {
+    display: flex;
+    align-item: center;
+    justify-content: center;
 }
+
+.logo img {
+max-width: 100px;
+}
+
+nav {
+margin-left: auto;
+}
+
 

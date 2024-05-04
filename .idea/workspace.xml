@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="ajustes no urls">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/estretura.css" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Inicio da estretura da Homepage">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/logo.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/estretura.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/estretura.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/siteclube/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/siteclube/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714820131601</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Inicio da estretura da Homepage">
+      <option name="closed" value="true" />
+      <created>1714821863439</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714821863439</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -223,6 +231,7 @@
     <MESSAGE value="Ficheiro BD" />
     <MESSAGE value="Inserir os botoes de ligação as outras páginas (Loja e Plantel)" />
     <MESSAGE value="ajustes no urls" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajustes no urls" />
+    <MESSAGE value="Inicio da estretura da Homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inicio da estretura da Homepage" />
   </component>
 </project>
