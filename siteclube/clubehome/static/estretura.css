@@ -1,0 +1,16 @@
+body{
+font-family: Arial, sans-serif;
+margin: 0px;
+padding: 0px;
+}
+
+header{
+background-color: blue;
+padding: 10 px;
+}
+
+h1 {
+    background-color: blue;
+    padding: 10px;
+}
+
