@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Inicio da estretura da Homepage">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/logo.jpeg" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Inserção do Logo">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/estretura.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/estretura.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/logo.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714821863439</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Inserção do Logo">
+      <option name="closed" value="true" />
+      <created>1714822507861</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714822507861</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -232,6 +241,7 @@
     <MESSAGE value="Inserir os botoes de ligação as outras páginas (Loja e Plantel)" />
     <MESSAGE value="ajustes no urls" />
     <MESSAGE value="Inicio da estretura da Homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inicio da estretura da Homepage" />
+    <MESSAGE value="Inserção do Logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inserção do Logo" />
   </component>
 </project>

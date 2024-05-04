@@ -5,8 +5,9 @@ padding: 0px;
 }
 
 header{
-background-color: lightgray;
-padding: 20px 0;
+background-color: #303e49;
+padding: 0px 10px;
+
 }
 
 .header-logo {
@@ -16,11 +17,26 @@ padding: 20px 0;
 }
 
 .logo img {
-max-width: 100px;
+max-width: 200px;
 }
 
 nav {
 margin-left: auto;
+}
+
+.banner{
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #ffc138;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.banner:hover {
+    background-color: #e89d10;
 }
 
 
