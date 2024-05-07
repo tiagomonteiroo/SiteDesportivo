@@ -30,9 +30,6 @@ def bilhetes(request):
 def noticias(request):
     return render(request, "clubehome/noticias.html")
 
-def resultados(request):
-    return render(request, "clubehome/resultados.html")
-
 def clube(request):
     return render(request, "clubehome/clube.html")
 

@@ -3,31 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <title>NOTÍCIAS | Site Oficial do Glu Glu Futebol Clube</title>
-    <link rel="stylesheet" href="static/noticias.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            background-color: #121f27;
+        }
+
+        header {
+            background-color: #121f27;
+            padding: 10px 0;
+            height: 50 px;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+
+        nav {
+            margin-right: 0px;
+            background-color: #303e49;
+            width:100%;
+        }
+
+        .box {
+            padding: 20px;
+            margin: 10px;
+            background-color: #ffc138;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .box:hover {
+            background-color: #e89d10;
+        }
+
+        .news-container {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        .news {
+            flex: 1;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #6758A3;
+            border-radius: 5px;
+            width: calc(70% - 30px);
+            margin-left: 30px;
+        }
+
+        .news img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .news-title {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .news-description {
+            margin-top: 10px;
+        }
+
+        .recent-games {
+            margin-left: auto;
+            padding: 20px;
+            background-color: #808080;
+            border-radius: 5px;
+            width: 20%;
+        }
+
+        .game {
+            background-color: #263B5C;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .game-info {
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="header-logo">
-            <div class="logo">
-                <img src="static/logo.png" alt="logotipo">
-            </div>
-            <nav>
-                <a href="{% url 'plantel' %}" class="box">Plantel</a>
-                <a href="{% url 'loja' %}" class="box">Loja</a>
-                <a href="{% url 'bilhetes' %}" class="box">Bilhetes</a>
-                <a href="{% url 'noticias' %}" class="box">Notícias</a>
-                <a href="{% url 'resultados' %}" class="box">Resultados</a>
-                <a href="{% url 'clube' %}" class="box">Clube</a>
-                <a href="{% url 'socio' %}" class="box">Sócio</a>
-                <a href="{% url 'login' %}" class="box">Conta</a>
-            </nav>
-        </div>
-
+        <nav>
+            <a href="{% url 'noticias' %}" class="box">Notícias</a>
+            <a href="{% url 'plantel' %}" class="box">Plantel</a>
+            <a href="{% url 'bilhetes' %}" class="box">Bilhetes</a>
+            <a href="{% url 'clube' %}" class="box">Clube</a>
+            <a href="{% url 'socio' %}" class="box">Sócio</a>
+            <a href="{% url 'loja' %}" class="box">Loja</a>
+            <a href="{% url 'login' %}" class="box">Conta</a>
+        </nav>
     </header>
 
     <main>
+        <div class="news">
+            <img src="imagem1.png" alt="Notícia 1">
+            <h2 class="news-title">Título da Notícia 1</h2>
+            <p class="news-description">Descrição da Notícia 1 com aproximadamente 100 letras...</p>
+        </div>
 
+        <div class="news">
+            <img src="imagem2.png" alt="Notícia 2">
+            <h2 class="news-title">Título da Notícia 2</h2>
+            <p class="news-description">Descrição da Notícia 2 com aproximadamente 100 letras...</p>
+        </div>
+
+        <div class="news">
+            <img src="imagem3.png" alt="Notícia 3">
+            <h2 class="news-title">Título da Notícia 3</h2>
+            <p class="news-description">Descrição da Notícia 3 com aproximadamente 100 letras...</p>
+        </div>
+
+        <div class="recent-games">
+            <div class="game">
+                <p class="game-info">Adversário: Equipe A</p>
+                <p class="game-info">Resultado: 2-1</p>
+                <p class="game-info">Local: Fora</p>
+                <p class="game-info">Data: 01/05/2024</p>
+            </div>
+            <div class="game">
+                <p class="game-info">Adversário: Equipe B</p>
+                <p class="game-info">Resultado: 3-0</p>
+                <p class="game-info">Local: Casa</p>
+                <p class="game-info">Data: 28/04/2024</p>
+            </div>
+            <div class="game">
+                <p class="game-info">Adversário: Equipe C</p>
+                <p class="game-info">Resultado: 1-1</p>
+                <p class="game-info">Local: Casa</p>
+                <p class="game-info">Data: 25/04/2024</p>
+            </div>
+            <div class="game">
+                <p class="game-info">Adversário: Equipe D</p>
+                <p class="game-info">Resultado: 0-2</p>
+                <p class="game-info">Local: Fora</p>
+                <p class="game-info">Data: 20/04/2024</p>
+            </div>
+        </div>
     </main>
-
 </body>
 </html>
