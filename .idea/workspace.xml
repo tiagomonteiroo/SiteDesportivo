@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="header homepage">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/resultados.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="nova pagina de noticias, apaguei td o q tinha a ver c a pag dos resultados" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -243,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714827595637</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="nova pagina de noticias, apaguei td o q tinha a ver c a pag dos resultados">
+      <option name="closed" value="true" />
+      <created>1715100496695</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1715100496695</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -261,6 +260,7 @@
     <MESSAGE value="Inicio da estretura da Homepage" />
     <MESSAGE value="Inserção do Logo" />
     <MESSAGE value="header homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="header homepage" />
+    <MESSAGE value="nova pagina de noticias, apaguei td o q tinha a ver c a pag dos resultados" />
+    <option name="LAST_COMMIT_MESSAGE" value="nova pagina de noticias, apaguei td o q tinha a ver c a pag dos resultados" />
   </component>
 </project>
