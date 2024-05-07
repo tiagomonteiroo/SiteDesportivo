@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="CSS DENTRO DO LOGIN">
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="App no settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/siteclube/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/siteclube/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715106070577</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="App no settings">
+      <option name="closed" value="true" />
+      <created>1715106649541</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1715106649541</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -339,6 +346,7 @@
     <MESSAGE value="Criação do Modelos do Projeto Antigo" />
     <MESSAGE value="Adicionar o Login" />
     <MESSAGE value="CSS DENTRO DO LOGIN" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS DENTRO DO LOGIN" />
+    <MESSAGE value="App no settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="App no settings" />
   </component>
 </project>
