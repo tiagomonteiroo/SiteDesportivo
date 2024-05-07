@@ -2,12 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLANTEL | Site Oficial do Glu Glu Futebol Clube</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            margin-bottom: 10px;
+        }
+
+        .player {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .player p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-<h1>ESTE E O PLANTEL</h1>
+    <div class="container">
+        <h1>Plantel da Equipe</h1>
 
-<a href="{% url 'homepage' %}"><button>Voltar à Homepage</button></a>
+        <div class="section">
+            <h2>Treinadores</h2>
+            {% for treinador in treinadores %}
+            <div class="player">
+                <p>Nome: {{ treinador.nome }}</p>
+                <p>Função: {{ treinador.funcao }}</p>
+                <p>Idade: {{ treinador.idade }}</p>
+            </div>
+            {% endfor %}
+        </div>
 
+        <div class="section">
+            <h2>Jogadores</h2>
+            {% for jogador in jogadores %}
+            <div class="player">
+                <p>Nome: {{ jogador.nome }}</p>
+                <p>Posição: {{ jogador.get_posicao_display }}</p>
+                <p>Idade: {{ jogador.idade }}</p>
+                <p>Camisola: {{ jogador.numero }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </body>
 </html>

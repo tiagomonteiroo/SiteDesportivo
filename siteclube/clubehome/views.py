@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
+from .models import Treinador, Jogador
 
 # Create your views here.
 def homepage(request):
@@ -16,13 +17,16 @@ def auth_login(request):
         else:
             error_message = "Nome de usuário ou senha incorretos."
             return render(request, 'clubehome/login.html', {'error_message': error_message})
-    return render(request,'clubehome/login.html' )
+    return render(request,'clubehome/login.html')
+
+def plantel_view(request):
+    # Obter todos os treinadores e jogadores do banco de dados
+    treinadores = Treinador.objects.all()
+    jogadores = Jogador.objects.all()
+    return render(request, 'clubehome/plantel.html', {'treinadores': treinadores, 'jogadores': jogadores})
 
 def loja(request):
     return render(request, "clubehome/loja.html")
-
-def plantel(request):
-    return render(request, "clubehome/plantel.html")
 
 def bilhetes(request):
     return render(request, "clubehome/bilhetes.html")
