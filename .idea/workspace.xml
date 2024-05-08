@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="CRIAÇÃO DE USERS">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" afterDir="false" />
-    </list>
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="USERS" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -383,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715181384306</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="USERS">
+      <option name="closed" value="true" />
+      <created>1715181650926</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1715181650926</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -422,6 +426,7 @@
     <MESSAGE value="TUDO DO INICIO ATE A AUlA DE HJ" />
     <MESSAGE value="MODELOS ATUALIZADOS" />
     <MESSAGE value="CRIAÇÃO DE USERS" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRIAÇÃO DE USERS" />
+    <MESSAGE value="USERS" />
+    <option name="LAST_COMMIT_MESSAGE" value="USERS" />
   </component>
 </project>
