@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login | Site Oficial do Glu Glu Futebol Clube </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Site Oficial do Glu Glu Futebol Clube</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'login.css' %}"/>
 
@@ -22,6 +23,7 @@
             <input type="password" id="password" name="password"><br>
             <button type="submit">Login</button>
         </form>
+        <a href="{% url 'registar' %}">Registar</a>
     </div>
 </body>
 </html>

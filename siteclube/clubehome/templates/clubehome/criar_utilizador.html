@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTAR | Site Oficial do Glu Glu Futebol Clube</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}"/>
+</head>
+<body>
+    <div>
+        <img src="{% static 'logo.png' %}" alt="logotipo">
+        <h2>Regista-te!</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Nome de usúario:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Palavra-passe:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <br><label for="is_admin">Conta Administrador?</label>
+            <input type="checkbox" id="is_admin" name="is_admin"><br>
+            <br><label for="NIF">NIF:</label><br>
+            <input type="text" id="NIF" name="NIF" required><br>
+            <button type="submit">Criar Conta</button>
+        </form>
+    </div>
+
+</body>
+</html>

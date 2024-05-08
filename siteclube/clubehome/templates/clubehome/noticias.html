@@ -2,47 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOTÍCIAS | Site Oficial do Glu Glu Futebol Clube</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0px;
-            padding: 0px;
-            background-color: #121f27;
-        }
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: #121f27;
+}
 
-        header {
-            background-color: #121f27;
-            padding: 10px 0;
-            height: 50 px;
-            margin-top: 30px;
-            margin-left: 30px;
-        }
+header {
+    background-color: #121f27;
+    padding: 10px 0;
+    height: 50 px;
+}
 
-        .header-content {
-            display: flex;
-            align-items: center;
-        }
+.header-content {
+    display: flex;
+    align-items: center;
+}
 
-        nav {
-            margin-right: 0px;
-            background-color: #303e49;
-            width:100%;
-        }
+.logo img {
+    max-width: 150px;
+}
 
-        .box {
-            padding: 20px;
-            margin: 10px;
-            background-color: #ffc138;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-        }
+.logo,
+nav {
+    display: inline-block;
+    vertical-align: middle;
+}
 
-        .box:hover {
-            background-color: #e89d10;
-        }
+.logo {
+    margin-right: 20px;
+}
+
+nav {
+    margin-right: 20px;
+    background-color: #303e49;
+}
+
+
+.box {
+    padding: 20px;
+    margin: 10px;
+    background-color: #ffc138;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.box:hover {
+    background-color: #e89d10;
+}
 
         .news-container {
             margin-top: 20px;
@@ -92,18 +105,24 @@
             color: #fff;
         }
     </style>
+    {% load static %}
 </head>
 <body>
     <header>
-        <nav>
-            <a href="{% url 'noticias' %}" class="box">Notícias</a>
-            <a href="{% url 'plantel' %}" class="box">Plantel</a>
-            <a href="{% url 'bilhetes' %}" class="box">Bilhetes</a>
-            <a href="{% url 'clube' %}" class="box">Clube</a>
-            <a href="{% url 'socio' %}" class="box">Sócio</a>
-            <a href="{% url 'loja' %}" class="box">Loja</a>
-            <a href="{% url 'login' %}" class="box">Conta</a>
-        </nav>
+        <div class="header-logo">
+        <div class="logo">
+            <img src="{% static 'logo.png' %}" alt="logotipo">
+        </div>
+            <nav>
+                <a href="{% url 'noticias' %}" class="box">Notícias</a>
+                <a href="{% url 'plantel' %}" class="box">Plantel</a>
+                <a href="{% url 'bilhetes' %}" class="box">Bilhetes</a>
+                <a href="{% url 'clube' %}" class="box">Clube</a>
+                <a href="{% url 'socio' %}" class="box">Sócio</a>
+                <a href="{% url 'loja' %}" class="box">Loja</a>
+                <a href="{% url 'login' %}" class="box">Conta</a>
+            </nav>
+        </div>
     </header>
 
     <main>
