@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from .models import Treinador, Jogador
+from .models import *
 
 # Create your views here.
 def homepage(request):
