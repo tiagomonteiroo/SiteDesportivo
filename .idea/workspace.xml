@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Correção do static">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_utilizador.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/bilhetes.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/bilhetes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/clube.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/clube.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -376,5 +385,15 @@
     <MESSAGE value="Modelos na Base de Dados" />
     <MESSAGE value="Correção do static" />
     <option name="LAST_COMMIT_MESSAGE" value="Correção do static" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/siteclube/clubehome/views.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

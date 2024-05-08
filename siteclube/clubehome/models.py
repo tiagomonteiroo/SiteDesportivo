@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Plantel(models.Model):
@@ -28,29 +29,15 @@ class Treinador(models.Model):
     funcao = models.CharField(max_length=100)
     idade = models.IntegerField()
     plantel = models.ForeignKey(Plantel, on_delete=models.CASCADE)
+    is_principal = models.BooleanField
 
-class Principal(Treinador):
-    pass
 
-class Auxiliar(Treinador):
-    pass
 
-class Conta(models.Model):
-    email = models.EmailField()
-    palavra_passe = models.CharField(max_length=100)
-
-class Utilizador(Conta):
-    nome = models.CharField(max_length=100)
-    NIF = models.IntegerField()
-    nascimento = models.DateField()
-
-class Admin(Conta):
-    nome = models.CharField(max_length=100)
-    funcao = models.CharField(max_length=100)
-    ano_entrada = models.DateField()
-
-class Socio(Utilizador):
-    N_Socio = models.IntegerField()
+class UserDetails(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    is_admin = models.BooleanField(default=False)
+    is_socio = models.BooleanField(default=False)
+    NIF = models.IntegerField(default=0)
 
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
@@ -58,7 +45,7 @@ class Produto(models.Model):
     ID_prod = models.IntegerField()
 
 class Venda(models.Model):
-    utilizador = models.ForeignKey(Utilizador, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     data = models.DateField()
 
