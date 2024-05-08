@@ -51,7 +51,6 @@ class Admin(Conta):
 
 class Socio(Utilizador):
     N_Socio = models.IntegerField()
-    is_socio = models.BooleanField()
 
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
