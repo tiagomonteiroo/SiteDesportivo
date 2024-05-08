@@ -56,3 +56,9 @@ class Bilhete(Produto):
 class Merchandising(Produto):
     tipo = models.CharField(max_length=100)
 
+class Venda(models.Model):
+    utilizador = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    data = models.DateField(auto_now_add=True)
+
+
