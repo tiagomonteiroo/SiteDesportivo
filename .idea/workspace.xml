@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="ula">
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="novo header">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_noticia.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -334,7 +337,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715184606149</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="novo header">
+      <option name="closed" value="true" />
+      <created>1715186880181</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1715186880181</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,6 +380,7 @@
     <MESSAGE value="CSS DENTRO DO LOGIN" />
     <MESSAGE value="App no settings" />
     <MESSAGE value="ula" />
-    <option name="LAST_COMMIT_MESSAGE" value="ula" />
+    <MESSAGE value="novo header" />
+    <option name="LAST_COMMIT_MESSAGE" value="novo header" />
   </component>
 </project>

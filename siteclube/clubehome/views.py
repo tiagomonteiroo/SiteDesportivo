@@ -38,6 +38,16 @@ def plantel_view(request):
     jogadores = Jogador.objects.all()
     return render(request, 'clubehome/plantel.html', {'treinadores': treinadores, 'jogadores': jogadores})
 
+def criar_noticia(request):
+    if request.method == 'POST':
+        titulo = request.POST.get('titulo')
+        descricao = request.POST.get('descricao')
+        imagem = request.FILES.get('imagem')
+        data_publicacao = request.POST.get('data_publicacao')
+        Noticia.objects.create(titulo=titulo, descricao=descricao, imagem=imagem, data_publicacao=data_publicacao)
+        return redirect('noticias')
+    return render(request, 'clubehome/criar_noticia.html')
+
 def loja(request):
     return render(request, "clubehome/loja.html")
 

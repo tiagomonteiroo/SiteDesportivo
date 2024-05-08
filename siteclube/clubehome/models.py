@@ -61,4 +61,8 @@ class Venda(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     data = models.DateField(auto_now_add=True)
 
-
+class Noticia(models.Model):
+    titulo = models.CharField(max_length=25)
+    descricao = models.CharField(max_length=100)
+    imagem = models.ImageField(upload_to='clubehome/static/noticias/')
+    data_publicacao = models.DateField(auto_now_add=True)
