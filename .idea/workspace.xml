@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="novo header">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="LOG-IN E LOGOUT">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_utilizador.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_utilizador.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,7 +341,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715186880181</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="LOG-IN E LOGOUT">
+      <option name="closed" value="true" />
+      <created>1715193746506</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1715193746506</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -381,6 +385,7 @@
     <MESSAGE value="App no settings" />
     <MESSAGE value="ula" />
     <MESSAGE value="novo header" />
-    <option name="LAST_COMMIT_MESSAGE" value="novo header" />
+    <MESSAGE value="LOG-IN E LOGOUT" />
+    <option name="LAST_COMMIT_MESSAGE" value="LOG-IN E LOGOUT" />
   </component>
 </project>
