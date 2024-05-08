@@ -9,7 +9,7 @@ header {
     background-color: #121f27;
     padding: 10px 0;
     height: 50 px;
-}
+    }
 
 .header-content {
     display: flex;
@@ -21,6 +21,7 @@ header {
 }
 
 .logo,
+
 nav {
     display: inline-block;
     vertical-align: middle;
@@ -33,22 +34,18 @@ nav {
 nav {
     margin-right: 20px;
     background-color: #303e49;
-    width:70%;
 }
 
-
 .box {
-    padding: 10px;
-    margin: 5px;
+    padding: 20px;
+    margin: 10px;
     background-color: #ffc138;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 18px;
 }
 
 .box:hover {
     background-color: #e89d10;
 }
-
-
-
