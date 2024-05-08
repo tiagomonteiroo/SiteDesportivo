@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="MODELOS ATUALIZADOS">
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="CRIAÇÃO DE USERS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715181221008</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="CRIAÇÃO DE USERS">
+      <option name="closed" value="true" />
+      <created>1715181384306</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1715181384306</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -413,6 +421,7 @@
     <MESSAGE value="Correção do static" />
     <MESSAGE value="TUDO DO INICIO ATE A AUlA DE HJ" />
     <MESSAGE value="MODELOS ATUALIZADOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="MODELOS ATUALIZADOS" />
+    <MESSAGE value="CRIAÇÃO DE USERS" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRIAÇÃO DE USERS" />
   </component>
 </project>
