@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User
 from django.db import models
 
 class Plantel(models.Model):
@@ -29,25 +28,24 @@ class Treinador(models.Model):
     funcao = models.CharField(max_length=100)
     idade = models.IntegerField()
     plantel = models.ForeignKey(Plantel, on_delete=models.CASCADE)
-    is_principal = models.BooleanField
 
+class Principal(Treinador):
+    pass
 
+class Auxiliar(Treinador):
+    pass
 
-class UserDetails(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    is_admin = models.BooleanField(default=False)
-    is_socio = models.BooleanField(default=False)
-    NIF = models.IntegerField(default=0)
 
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
     preco = models.DecimalField(max_digits=10, decimal_places=2)
     ID_prod = models.IntegerField()
 
-class Venda(models.Model):
-    user = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
-    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
-    data = models.DateField()
+class UserDetails(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    is_admin = models.BooleanField(default=False)
+    is_socio = models.BooleanField(default=False)
+    NIF = models.IntegerField(default=0)
 
 class Bilhete(Produto):
     data = models.DateField()
