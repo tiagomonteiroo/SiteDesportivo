@@ -145,3 +145,9 @@ nav {
 .game-info {
     color: #fff;
 }
+.logout-box{
+float: right;
+}
+.loginoff-box{
+float: left;
+}

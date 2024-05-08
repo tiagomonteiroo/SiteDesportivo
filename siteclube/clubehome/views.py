@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from .models import *
+from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
 def homepage(request):
@@ -31,6 +32,9 @@ def criar_utilizador(request):
         UserDetails.objects.create(user=user, is_admin=is_admin, is_socio=is_socio, NIF=NIF)
         return redirect('homepage')
     return render(request, 'clubehome/criar_utilizador.html')
+def logout(request):
+    auth_logout(request)
+    return redirect('homepage')
 
 def plantel_view(request):
     # Obter todos os treinadores e jogadores do banco de dados

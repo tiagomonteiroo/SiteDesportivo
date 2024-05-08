@@ -1,0 +1,58 @@
+Index: siteclube/clubehome/static/estrutura.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body {\n    font-family: Arial, sans-serif;\n    margin: 0px;\n    padding: 0px;\n    background-color: #121f27;\n}\n\nheader {\n    background-color: #121f27;\n    padding: 10px 0;\n    height: 50 px;\n    }\n\n.header-content {\n    display: flex;\n    align-items: center;\n}\n\n.logo img {\n    max-width: 150px;\n}\n\n.logo,\n\nnav {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.logo {\n    margin-right: 20px;\n}\n\nnav {\n    margin-right: 20px;\n    background-color: #303e49;\n}\n\n.box {\n    padding: 20px;\n    margin: 10px;\n    background-color: #ffc138;\n    color: #fff;\n    text-decoration: none;\n    border-radius: 5px;\n    font-size: 18px;\n}\n\n.box:hover {\n    background-color: #e89d10;\n}
+===================================================================
+diff --git a/siteclube/clubehome/static/estrutura.css b/siteclube/clubehome/static/estrutura.css
+--- a/siteclube/clubehome/static/estrutura.css	
++++ b/siteclube/clubehome/static/estrutura.css	
+@@ -9,7 +9,7 @@
+     background-color: #121f27;
+     padding: 10px 0;
+     height: 50 px;
+-    }
++}
+ 
+ .header-content {
+     display: flex;
+@@ -17,11 +17,10 @@
+ }
+ 
+ .logo img {
+-    max-width: 150px;
++    max-width: 1000px;
+ }
+ 
+ .logo,
+-
+ nav {
+     display: inline-block;
+     vertical-align: middle;
+@@ -34,18 +33,22 @@
+ nav {
+     margin-right: 20px;
+     background-color: #303e49;
++    width:70%;
+ }
++
+ 
+ .box {
+-    padding: 20px;
+-    margin: 10px;
++    padding: 10px;
++    margin: 5px;
+     background-color: #ffc138;
+     color: #fff;
+     text-decoration: none;
+     border-radius: 5px;
+-    font-size: 18px;
+ }
+ 
+ .box:hover {
+     background-color: #e89d10;
+-}
+\ No newline at end of file
++}
++
++
++
