@@ -9,6 +9,7 @@ header {
     background-color: #121f27;
     padding: 10px 0;
     height: 50 px;
+    width: 100%;
     }
 
 .header-content {
@@ -20,10 +21,12 @@ header {
     max-width: 150px;
 }
 
-.logo,
+.logo {
+    float: left;
+}
 
 nav {
-    display: inline-block;
+    display: flex;
     vertical-align: middle;
 }
 
@@ -32,18 +35,16 @@ nav {
 }
 
 nav {
-    margin-right: 20px;
-    background-color: #303e49;
+
 }
 
 .box {
-    padding: 20px;
-    margin: 10px;
+    padding: 25px;
     background-color: #ffc138;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
+    font-size: 20px;
+    margin: 40px 0;
 }
 
 .box:hover {
@@ -51,97 +52,96 @@ nav {
 }
 
 .news-container {
-            margin-top: 20px;
-            display: flex;
-        }
+    margin-top: 20px;
+    display: flex;
+}
 
-        .news {
-            flex: 1;
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #6758A3;
-            border-radius: 5px;
-            width: calc(70% - 30px);
-            margin-left: 30px;
-        }
+.news {
+    flex: 1;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #6758A3;
+    border-radius: 5px;
+    width: calc(70% - 30px);
+    margin-left: 30px;
+}
 
-        .news img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
+.news img {
+    max-width: 100%;
+    border-radius: 5px;
+}
 
-        .news-title {
-            font-size: 24px;
-            margin-top: 10px;
-        }
+.news-title {
+    font-size: 24px;
+    margin-top: 10px;
+}
 
-        .news-description {
-            margin-top: 10px;
-        }
+.news-description {
+    margin-top: 10px;
+}
 
-        .recent-games {
-            margin-left: auto;
-            padding: 20px;
-            background-color: #808080;
-            border-radius: 5px;
-            width: 20%;
-        }
+.recent-games {
+    margin-left: auto;
+    padding: 20px;
+    background-color: #808080;
+    border-radius: 5px;
+    width: 20%;
+}
 
-        .game {
-            background-color: #263B5C;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
+.game {
+    background-color: #263B5C;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
 
-        .game-info {
-            color: #fff;
-        }
+.game-info {
+    color: #fff;
+}
 
-        .news-container {
-            margin-top: 20px;
-            display: flex;
-        }
+.news-container {
+    margin-top: 20px;
+    display: flex;
+}
 
-        .news {
-            flex: 1;
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #6758A3;
-            border-radius: 5px;
-            width: calc(70% - 30px);
-            margin-left: 30px;
-        }
+.news {
+    flex: 1;
+    margin-top: 20px;
+    padding: 20px;
+   background-color: #6758A3;
+    border-radius: 5px;
+    width: calc(70% - 30px);
+    margin-left: 30px;
+}
 
-        .news img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
+.news img {
+    max-width: 100%;
+    border-radius: 5px;
+}
 
-        .news-title {
-            font-size: 24px;
-            margin-top: 10px;
-        }
+.news-title {
+    font-size: 24px;
+    margin-top: 10px;
+}
 
-        .news-description {
-            margin-top: 10px;
-        }
+.news-description {
+    margin-top: 10px;
+}
 
-        .recent-games {
-            margin-left: auto;
-            padding: 20px;
-            background-color: #808080;
-            border-radius: 5px;
-            width: 20%;
-        }
+.recent-games {
+    margin-left: auto;
+    padding: 20px;
+    background-color: #808080;
+    width: 20%;
+}
 
-        .game {
-            background-color: #263B5C;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
+.game {
+    background-color: #263B5C;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
 
-        .game-info {
-            color: #fff;
-        }
+.game-info {
+    color: #fff;
+}
