@@ -29,3 +29,7 @@
             text-decoration: none;
             border-radius: 5px;
         }
+
+        img{
+        max-width: 200px;
+        }
