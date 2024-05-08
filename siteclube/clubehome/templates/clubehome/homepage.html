@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME | Site Oficial do Glu Glu Futebol Clube </title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'estrutura.css' %}"/>
+    <link rel="stylesheet" href="{% static 'styling.css' %}"/>
 </head>
 <body>
     <header>
@@ -14,12 +14,12 @@
                 <img src="{% static 'logo.png' %}" alt="logotipo">
             </div>
             <nav>
-                <a href="{% url 'plantel' %}" class="box">Plantel</a>
-                <a href="{% url 'loja' %}" class="box">Loja</a>
-                <a href="{% url 'bilhetes' %}" class="box">Bilhetes</a>
                 <a href="{% url 'noticias' %}" class="box">Notícias</a>
+                <a href="{% url 'plantel' %}" class="box">Plantel</a>
+                <a href="{% url 'bilhetes' %}" class="box">Bilhetes</a>
                 <a href="{% url 'clube' %}" class="box">Clube</a>
                 <a href="{% url 'socio' %}" class="box">Sócio</a>
+                <a href="{% url 'loja' %}" class="box">Loja</a>
                 <a href="{% url 'login' %}" class="box">Conta</a>
             </nav>
         </div>
