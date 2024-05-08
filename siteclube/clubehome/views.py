@@ -52,6 +52,11 @@ def criar_noticia(request):
         return redirect('noticias')
     return render(request, 'clubehome/criar_noticia.html')
 
+def ultimas_quatro_noticias(request):
+    ultimas_noticias = Noticia.objects.order_by('-data_publicacao')[:4]
+    context = {'ultimas_noticias': ultimas_noticias}
+    return render(request, 'clubehome/noticias.html', context)
+
 def loja(request):
     return render(request, "clubehome/loja.html")
 

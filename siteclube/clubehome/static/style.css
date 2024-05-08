@@ -34,10 +34,6 @@ nav {
     margin-right: 20px;
 }
 
-nav {
-
-}
-
 .box {
     padding: 25px;
     background-color: #ffc138;
@@ -56,47 +52,8 @@ nav {
     display: flex;
 }
 
-.news {
-    flex: 1;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #6758A3;
-    border-radius: 5px;
-    width: calc(70% - 30px);
-    margin-left: 30px;
-}
-
-.news img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.news-title {
-    font-size: 24px;
-    margin-top: 10px;
-}
-
 .news-description {
     margin-top: 10px;
-}
-
-.recent-games {
-    margin-left: auto;
-    padding: 20px;
-    background-color: #808080;
-    border-radius: 5px;
-    width: 20%;
-}
-
-.game {
-    background-color: #263B5C;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.game-info {
-    color: #fff;
 }
 
 .news-container {
