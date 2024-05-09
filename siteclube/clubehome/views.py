@@ -62,6 +62,15 @@ def loja(request):
     context = {'produtos' : produtos}
     return render(request, "clubehome/loja.html", context)
 
+def criar_produto (request):
+    if request.method == 'POST':
+        nome = request.POST.get("nome")
+        preco = request.POST.get("preco")
+        type = request.POST.get("type")
+        Produto.objects.create(nome=nome, preco=preco,type=type)
+        return redirect('loja')
+    return render(request, 'clubehome/criar_produto.html')
+
 def bilhetes(request):
     return render(request, "clubehome/bilhetes.html")
 

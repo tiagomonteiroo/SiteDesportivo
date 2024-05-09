@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="AlTERAÇÔES MODELO">
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="NAO TOCAR VIEWS IMPORTS">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0007_remove_produto_id_prod.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/loja.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/loja2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
     </list>
@@ -62,14 +68,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/siteclube/clubehome/static" />
@@ -366,7 +373,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715254342899</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="NAO TOCAR VIEWS IMPORTS">
+      <option name="closed" value="true" />
+      <created>1715262062093</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1715262062093</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -381,6 +396,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Projeto Criado" />
     <MESSAGE value="Projeto Django Criado &quot;siteclube&quot;" />
     <MESSAGE value="Aplicação Django Criada - &quot;clubehome&quot;" />
@@ -405,6 +421,7 @@
     <MESSAGE value="LOG-IN E LOGOUT" />
     <MESSAGE value="LOGO VAI PARA HOMEPAGE" />
     <MESSAGE value="AlTERAÇÔES MODELO" />
-    <option name="LAST_COMMIT_MESSAGE" value="AlTERAÇÔES MODELO" />
+    <MESSAGE value="NAO TOCAR VIEWS IMPORTS" />
+    <option name="LAST_COMMIT_MESSAGE" value="NAO TOCAR VIEWS IMPORTS" />
   </component>
 </project>
