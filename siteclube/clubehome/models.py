@@ -41,6 +41,7 @@ class Produto(models.Model):
     nome = models.CharField(max_length=100)
     preco = models.DecimalField(max_digits=10, decimal_places=2)
     ID_prod = models.IntegerField()
+    type = models.CharField(max_length=100, default="Produto")
 
 class UserDetails(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -52,9 +53,6 @@ class Bilhete(Produto):
     data = models.DateField()
     lugar = models.IntegerField()
     N_Emissao = models.IntegerField()
-
-class Merchandising(Produto):
-    tipo = models.CharField(max_length=100)
 
 class Venda(models.Model):
     utilizador = models.ForeignKey(UserDetails, on_delete=models.CASCADE)

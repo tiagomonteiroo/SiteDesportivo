@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from .models import *
+from .models import UserDetails,Treinador,Jogador, Noticia, Produto
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -58,7 +58,9 @@ def ultimas_quatro_noticias(request):
     return render(request, 'clubehome/noticias.html', context)
 
 def loja(request):
-    return render(request, "clubehome/loja.html")
+    produtos = Produto.objects.all()
+    context = {'produtos' : produtos}
+    return render(request, "clubehome/loja.html", context)
 
 def bilhetes(request):
     return render(request, "clubehome/bilhetes.html")
