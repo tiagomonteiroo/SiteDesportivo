@@ -64,3 +64,10 @@ class Noticia(models.Model):
     descricao = models.CharField(max_length=100)
     imagem = models.ImageField(upload_to='clubehome/static/noticias/')
     data_publicacao = models.DateField(auto_now_add=True)
+
+class Jogo(models.Model):
+    adversario = models.CharField(max_length=50)
+    golos_clube = models.PositiveIntegerField()
+    golos_adversario = models.PositiveIntegerField()
+    local = models.CharField(max_length=10, choices=[('fora', 'Fora'), ('casa', 'Casa')])
+    data_jogo = models.DateField()
