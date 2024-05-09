@@ -64,6 +64,7 @@ class Noticia(models.Model):
     imagem = models.ImageField(upload_to='clubehome/static/noticias/')
     data_publicacao = models.DateField(auto_now_add=True)
 
+
 class Jogo(models.Model):
     adversario = models.CharField(max_length=50)
     golos_clube = models.PositiveIntegerField()
