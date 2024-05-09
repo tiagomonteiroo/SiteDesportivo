@@ -1,0 +1,278 @@
+Index: siteclube/clubehome/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.contrib.auth.models import User\r\nfrom django.db import models\r\n\r\nclass Plantel(models.Model):\r\n    SIGLA_CHOICES = (\r\n        (\"A\", \"A\"),\r\n        (\"B\", \"B\")\r\n    )\r\n    sigla = models.CharField(max_length=1, choices=SIGLA_CHOICES)\r\n    desporto = models.CharField(max_length=20)\r\n\r\nclass Jogador(models.Model):\r\n    POSICAO_CHOICES = (\r\n        (\"Avançado\", \"Avançado\"),\r\n        (\"Extremo\", \"Extremo\"),\r\n        (\"Médio\", \"Médio\"),\r\n        (\"Central\", \"Central\"),\r\n        (\"Lateral\", \"Lateral\"),\r\n        (\"Guarda-Redes\", \"Guarda-Redes\")\r\n    )\r\n    numero = models.IntegerField()\r\n    nome = models.CharField(max_length=100)\r\n    posicao = models.CharField(max_length=20, choices=POSICAO_CHOICES)\r\n    idade = models.IntegerField()\r\n    plantel = models.ForeignKey(Plantel, on_delete=models.CASCADE)\r\n\r\nclass Treinador(models.Model):\r\n    nome = models.CharField(max_length=100)\r\n    funcao = models.CharField(max_length=100)\r\n    idade = models.IntegerField()\r\n    plantel = models.ForeignKey(Plantel, on_delete=models.CASCADE)\r\n\r\nclass Principal(Treinador):\r\n    pass\r\n\r\nclass Auxiliar(Treinador):\r\n    pass\r\n\r\n\r\nclass Produto(models.Model):\r\n    nome = models.CharField(max_length=100)\r\n    preco = models.DecimalField(max_digits=10, decimal_places=2)\r\n    ID_prod = models.IntegerField()\r\n\r\nclass UserDetails(models.Model):\r\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\r\n    is_admin = models.BooleanField(default=False)\r\n    is_socio = models.BooleanField(default=False)\r\n    NIF = models.IntegerField(default=0)\r\n\r\nclass Bilhete(Produto):\r\n    data = models.DateField()\r\n    lugar = models.IntegerField()\r\n    N_Emissao = models.IntegerField()\r\n\r\nclass Merchandising(Produto):\r\n    tipo = models.CharField(max_length=100)\r\n\r\nclass Venda(models.Model):\r\n    utilizador = models.ForeignKey(UserDetails, on_delete=models.CASCADE)\r\n    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)\r\n    data = models.DateField(auto_now_add=True)\r\n\r\nclass Noticia(models.Model):\r\n    titulo = models.CharField(max_length=25)\r\n    descricao = models.CharField(max_length=100)\r\n    imagem = models.ImageField(upload_to='clubehome/static/noticias/')\r\n    data_publicacao = models.DateField(auto_now_add=True)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/siteclube/clubehome/models.py b/siteclube/clubehome/models.py
+--- a/siteclube/clubehome/models.py	(revision d53ba46ce921275acf95eb0201778125152f02fe)
++++ b/siteclube/clubehome/models.py	(date 1715250283139)
+@@ -65,4 +65,11 @@
+     titulo = models.CharField(max_length=25)
+     descricao = models.CharField(max_length=100)
+     imagem = models.ImageField(upload_to='clubehome/static/noticias/')
+-    data_publicacao = models.DateField(auto_now_add=True)
+\ No newline at end of file
++    data_publicacao = models.DateField(auto_now_add=True)
++
++class Jogo(models.Model):
++    adversario = models.CharField(max_length=50)
++    golos_clube = models.PositiveIntegerField()
++    golos_adversario = models.PositiveIntegerField()
++    local = models.CharField(max_length=10, choices=[('fora', 'Fora'), ('casa', 'Casa')])
++    data_jogo = models.DateField()
+\ No newline at end of file
+Index: siteclube/clubehome/templates/clubehome/noticias.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>NOTÍCIAS | Site Oficial do Glu Glu Futebol Clube</title>\r\n    {% load static %}\r\n    <link rel=\"stylesheet\" href=\"{% static 'style.css' %}\"/>\r\n</head>\r\n<body>\r\n    <header>\r\n        <div class=\"header-logo\">\r\n            <div class=\"logo\">\r\n                <a href=\"{% url 'homepage' %}\">\r\n                    <img src=\"{% static 'logo.png' %}\" alt=\"logotipo\">\r\n                </a>\r\n            </div>\r\n                <nav>\r\n                    <a href=\"{% url 'noticias' %}\" class=\"box\">Notícias</a>\r\n                    <a href=\"{% url 'plantel' %}\" class=\"box\">Plantel</a>\r\n                    <a href=\"{% url 'bilhetes' %}\" class=\"box\">Bilhetes</a>\r\n                    <a href=\"{% url 'clube' %}\" class=\"box\">Clube</a>\r\n                    <a href=\"{% url 'socio' %}\" class=\"box\">Sócio</a>\r\n                    <a href=\"{% url 'loja' %}\" class=\"box\">Loja</a>\r\n                    {% if user.is_authenticated %}\r\n                    <a href=\"{% url 'logout' %}\" class=\"box\">Logout</a>\r\n                    {% else %}\r\n                    <a href=\"{% url 'login' %}\" class=\"box\">Conta</a>\r\n                    {% endif %}\r\n                </nav>\r\n        </div>\r\n    </header>\r\n\r\n    <main>\r\n        {% if user.userdetails.is_admin and user.is_authenticated  %}\r\n        <a href=\"{% url 'criar_noticia' %}\"><button>Criar Notícia</button></a>\r\n       {% endif %}\r\n\r\n        <div class=\"ladlad\">\r\n            {% for noticia in ultimas_noticias %}\r\n                <div class=\"news\">\r\n                    <img src=\"{{ noticia.imagem.url }}\" alt=\"{{ noticia.titulo }}\">\r\n                    <h2 class=\"news-title\">{{ noticia.titulo }}</h2>\r\n                    <p class=\"news-description\">{{ noticia.descricao }}</p>\r\n                </div>\r\n            {% endfor %}\r\n\r\n            <div class=\"recent-games\">\r\n                <div class=\"game\">\r\n                    <p class=\"game-info\">Adversário: Equipe A</p>\r\n                    <p class=\"game-info\">Resultado: 2-1</p>\r\n                    <p class=\"game-info\">Local: Fora</p>\r\n                    <p class=\"game-info\">Data: 01/05/2024</p>\r\n                </div>\r\n                <div class=\"game\">\r\n                    <p class=\"game-info\">Adversário: Equipe B</p>\r\n                    <p class=\"game-info\">Resultado: 3-0</p>\r\n                    <p class=\"game-info\">Local: Casa</p>\r\n                    <p class=\"game-info\">Data: 28/04/2024</p>\r\n                </div>\r\n                <div class=\"game\">\r\n                    <p class=\"game-info\">Adversário: Equipe C</p>\r\n                    <p class=\"game-info\">Resultado: 1-1</p>\r\n                    <p class=\"game-info\">Local: Casa</p>\r\n                    <p class=\"game-info\">Data: 25/04/2024</p>\r\n                </div>\r\n                <div class=\"game\">\r\n                    <p class=\"game-info\">Adversário: Equipe D</p>\r\n                    <p class=\"game-info\">Resultado: 0-2</p>\r\n                    <p class=\"game-info\">Local: Fora</p>\r\n                    <p class=\"game-info\">Data: 20/04/2024</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </main>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/siteclube/clubehome/templates/clubehome/noticias.html b/siteclube/clubehome/templates/clubehome/noticias.html
+--- a/siteclube/clubehome/templates/clubehome/noticias.html	(revision d53ba46ce921275acf95eb0201778125152f02fe)
++++ b/siteclube/clubehome/templates/clubehome/noticias.html	(date 1715251678953)
+@@ -32,9 +32,10 @@
+     </header>
+ 
+     <main>
+-        {% if user.userdetails.is_admin and user.is_authenticated  %}
+-        <a href="{% url 'criar_noticia' %}"><button>Criar Notícia</button></a>
+-       {% endif %}
++        <!-- {% if user.userdetails.is_admin and user.is_authenticated  %} -->
++        <a href="{% url 'criar_noticia' %}"><button>Criar Notícia</button></a><br>
++        <a href="{% url 'criar_jogo' %}"><button>Criar Jogo</button></a>
++        <!-- {% endif %} -->
+ 
+         <div class="ladlad">
+             {% for noticia in ultimas_noticias %}
+@@ -45,32 +46,14 @@
+                 </div>
+             {% endfor %}
+ 
+-            <div class="recent-games">
+-                <div class="game">
+-                    <p class="game-info">Adversário: Equipe A</p>
+-                    <p class="game-info">Resultado: 2-1</p>
+-                    <p class="game-info">Local: Fora</p>
+-                    <p class="game-info">Data: 01/05/2024</p>
+-                </div>
+-                <div class="game">
+-                    <p class="game-info">Adversário: Equipe B</p>
+-                    <p class="game-info">Resultado: 3-0</p>
+-                    <p class="game-info">Local: Casa</p>
+-                    <p class="game-info">Data: 28/04/2024</p>
+-                </div>
+-                <div class="game">
+-                    <p class="game-info">Adversário: Equipe C</p>
+-                    <p class="game-info">Resultado: 1-1</p>
+-                    <p class="game-info">Local: Casa</p>
+-                    <p class="game-info">Data: 25/04/2024</p>
+-                </div>
++            {% for jogo in ultimos_jogos %}
+                 <div class="game">
+-                    <p class="game-info">Adversário: Equipe D</p>
+-                    <p class="game-info">Resultado: 0-2</p>
+-                    <p class="game-info">Local: Fora</p>
+-                    <p class="game-info">Data: 20/04/2024</p>
++                    <h2 class="game-opponent">Contra: {{ jogo.adversario }}</h2>
++                    <p class="game-score">Placar: {{ jogo.golos_clube }} x {{ jogo.golos_adversario }}</p>
++                    <p class="game-location">Local: {{ jogo.local }}</p>
++                    <p class="game-date">Data: {{ jogo.data_jogo }}</p>
+                 </div>
+-            </div>
++            {% endfor %}
+         </div>
+     </main>
+ </body>
+Index: siteclube/clubehome/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.urls import include, path\r\nfrom . import views\r\n\r\nurlpatterns = [\r\n    path(\"\", views.homepage, name = \"homepage\"),\r\n    path(\"login/\", views.auth_login, name = \"login\"),\r\n    path(\"plantel/\", views.plantel_view, name = \"plantel\"),\r\n    path(\"loja/\", views.loja, name = \"loja\"),\r\n    path(\"bilhetes/\", views.bilhetes, name = \"bilhetes\"),\r\n    path(\"noticias/\", views.ultimas_quatro_noticias, name = \"noticias\"),\r\n    path(\"clube/\", views.clube, name = \"clube\"),\r\n    path(\"socio/\", views.socio, name = \"socio\"),\r\n    path(\"registar/\", views.criar_utilizador, name=\"registar\"),\r\n    path(\"criarnoticia/\", views.criar_noticia, name=\"criar_noticia\"),\r\n    path(\"logout/\", views.logout, name=\"logout\")\r\n]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/siteclube/clubehome/urls.py b/siteclube/clubehome/urls.py
+--- a/siteclube/clubehome/urls.py	(revision d53ba46ce921275acf95eb0201778125152f02fe)
++++ b/siteclube/clubehome/urls.py	(date 1715250643495)
+@@ -7,10 +7,11 @@
+     path("plantel/", views.plantel_view, name = "plantel"),
+     path("loja/", views.loja, name = "loja"),
+     path("bilhetes/", views.bilhetes, name = "bilhetes"),
+-    path("noticias/", views.ultimas_quatro_noticias, name = "noticias"),
++    path("noticias/", views.ultimas_quatro, name = "noticias"),
+     path("clube/", views.clube, name = "clube"),
+     path("socio/", views.socio, name = "socio"),
+     path("registar/", views.criar_utilizador, name="registar"),
+     path("criarnoticia/", views.criar_noticia, name="criar_noticia"),
++    path("criarjogo/", views.criar_jogo, name="criar_jogo"),
+     path("logout/", views.logout, name="logout")
+ ]
+\ No newline at end of file
+Index: siteclube/clubehome/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.contrib.auth import authenticate, login\r\nfrom django.contrib.auth.models import User\r\nfrom django.shortcuts import render, redirect\r\nfrom .models import *\r\nfrom django.contrib.auth import logout as auth_logout\r\n\r\n# Create your views here.\r\ndef homepage(request):\r\n    return render(request, 'clubehome/homepage.html')\r\n\r\ndef auth_login(request):\r\n    if request.method == 'POST':\r\n        username = request.POST['username']\r\n        password = request.POST['password']\r\n        user=authenticate(request, username=username,password=password)\r\n        if user is not None:\r\n            login(request,user)\r\n            return redirect('homepage')\r\n        else:\r\n            error_message = \"Nome de usuário ou senha incorretos.\"\r\n            return render(request, 'clubehome/login.html', {'error_message': error_message})\r\n    return render(request,'clubehome/login.html')\r\n\r\ndef criar_utilizador(request):\r\n    if request.method == 'POST':\r\n        username = request.POST.get('username')\r\n        password = request.POST.get('password')\r\n        is_admin = request.POST.get('is_admin') == 'on'\r\n        is_socio = request.POST.get('is_socio') == 'on'\r\n        NIF = request.POST.get('NIF')\r\n        user = User.objects.create_user(username=username, password=password)\r\n        UserDetails.objects.create(user=user, is_admin=is_admin, is_socio=is_socio, NIF=NIF)\r\n        return redirect('homepage')\r\n    return render(request, 'clubehome/criar_utilizador.html')\r\ndef logout(request):\r\n    auth_logout(request)\r\n    return redirect('homepage')\r\n\r\ndef plantel_view(request):\r\n    # Obter todos os treinadores e jogadores do banco de dados\r\n    treinadores = Treinador.objects.all()\r\n    jogadores = Jogador.objects.all()\r\n    return render(request, 'clubehome/plantel.html', {'treinadores': treinadores, 'jogadores': jogadores})\r\n\r\ndef criar_noticia(request):\r\n    if request.method == 'POST':\r\n        titulo = request.POST.get('titulo')\r\n        descricao = request.POST.get('descricao')\r\n        imagem = request.FILES.get('imagem')\r\n        data_publicacao = request.POST.get('data_publicacao')\r\n        Noticia.objects.create(titulo=titulo, descricao=descricao, imagem=imagem, data_publicacao=data_publicacao)\r\n        return redirect('noticias')\r\n    return render(request, 'clubehome/criar_noticia.html')\r\n\r\ndef ultimas_quatro_noticias(request):\r\n    ultimas_noticias = Noticia.objects.order_by('-data_publicacao')[:4]\r\n    context = {'ultimas_noticias': ultimas_noticias}\r\n    return render(request, 'clubehome/noticias.html', context)\r\n\r\ndef loja(request):\r\n    return render(request, \"clubehome/loja.html\")\r\n\r\ndef bilhetes(request):\r\n    return render(request, \"clubehome/bilhetes.html\")\r\n\r\ndef noticias(request):\r\n    return render(request, \"clubehome/noticias.html\")\r\n\r\ndef clube(request):\r\n    return render(request, \"clubehome/clube.html\")\r\n\r\ndef socio(request):\r\n    return render(request, \"clubehome/socio.html\")\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/siteclube/clubehome/views.py b/siteclube/clubehome/views.py
+--- a/siteclube/clubehome/views.py	(revision d53ba46ce921275acf95eb0201778125152f02fe)
++++ b/siteclube/clubehome/views.py	(date 1715250910358)
+@@ -52,9 +52,22 @@
+         return redirect('noticias')
+     return render(request, 'clubehome/criar_noticia.html')
+ 
+-def ultimas_quatro_noticias(request):
++def criar_jogo(request):
++    if request.method == 'POST':
++        adversario = request.POST.get('adversario')
++        golos_clube = request.POST.get('golos_clube')
++        golos_adversario = request.POST.get('golos_adversario')
++        local = request.POST.get('local')
++        data_jogo = request.POST.get('data_jogo')
++        Jogo.objects.create(adversario=adversario, golos_clube=golos_clube, golos_adversario=golos_adversario, local=local,data_jogo=data_jogo)
++        return redirect('noticias')
++    return render(request, 'clubehome/criar_jogo.html')
++
++
++def ultimas_quatro(request):
+     ultimas_noticias = Noticia.objects.order_by('-data_publicacao')[:4]
+-    context = {'ultimas_noticias': ultimas_noticias}
++    ultimos_jogos = Jogo.objects.order_by('-data_jogo')[:4]
++    context = {'ultimos_jogos': ultimos_jogos, 'ultimas_noticias': ultimas_noticias}
+     return render(request, 'clubehome/noticias.html', context)
+ 
+ def loja(request):
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4d030d01-4588-4c22-97aa-2dcc1252e1aa\" name=\"Changes\" comment=\"LOGO VAI PARA HOMEPAGE\">\r\n      <change afterPath=\"$PROJECT_DIR$/siteclube/clubehome/static/style.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__16_57__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__16_57__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__17_07__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__17_07__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__17_07__Changes_1.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__17_07__Changes_1.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__19_01__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__19_01__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/siteclube/clubehome/static/styling.css\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/siteclube/clubehome/urls.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/siteclube/clubehome/urls.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/siteclube/clubehome/views.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/siteclube/clubehome/views.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/siteclube/db.sqlite3\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/siteclube/db.sqlite3\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;tiagomonteiroo&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"e25528ab-5aea-4941-ab2a-3368fde8868b\" />\r\n        <option name=\"url\" value=\"https://github.com/tiagomonteiroo/SiteDesportivo.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2fgKF6m8StEzHrYxrV08hNR3Isi\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/siteclube/clubehome/static\" />\r\n      <recent name=\"$PROJECT_DIR$/siteclube/clubehome/static/login\" />\r\n      <recent name=\"$PROJECT_DIR$/siteclube/clubehome\" />\r\n      <recent name=\"$PROJECT_DIR$/siteclube/clubehome/templates/CSS\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\r\n      <module name=\"Projeto_DIAM\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4d030d01-4588-4c22-97aa-2dcc1252e1aa\" name=\"Changes\" comment=\"\" />\r\n      <created>1714217174654</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1714217174654</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Projeto Criado\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714217578338</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714217578338</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Projeto Django Criado &quot;siteclube&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714217980361</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714217980361</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Aplicação Django Criada - &quot;clubehome&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714218615396</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714218615396</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Estabelecimento de conexão, dos urls, entre server e app\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714219570353</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714219570353</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Estabelecidas as ligações entre as views da app e os templates(HTML'S)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714219943755</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714219943755</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Tentativa 1\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714220260331</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714220260331</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Alteração das DIRS\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714220595616</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714220595616</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Ficheiro BD\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714220624275</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714220624275</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Ficheiro BD\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714222165161</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714222165161</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Ficheiro BD\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714229489383</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714229489383</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Inserir os botoes de ligação as outras páginas (Loja e Plantel)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714675361538</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714675361538</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"ajustes no urls\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714820131601</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714820131601</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Inicio da estretura da Homepage\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714821863439</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714821863439</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Inserção do Logo\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714822507861</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714822507861</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"header homepage\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714827595637</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714827595637</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"Alterações Homepage\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714831700216</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714831700216</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"Alterações Homepage\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714839194685</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714839194685</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"Criação do Modelos do Projeto Antigo\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714839905064</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714839905064</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"Adicionar o Login\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714845074018</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714845074018</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"Adicionar o Login\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714845149953</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714845149953</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"Adicionar o Login\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714845368300</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714845368300</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"CSS DENTRO DO LOGIN\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714911857789</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714911857789</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"CSS DENTRO DO LOGIN\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714920140571</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714920140571</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00024\" summary=\"CSS DENTRO DO LOGIN\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715106070577</created>\r\n      <option name=\"number\" value=\"00024\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715106070577</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00025\" summary=\"App no settings\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715106649541</created>\r\n      <option name=\"number\" value=\"00025\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715106649541</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00026\" summary=\"ula\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715184463170</created>\r\n      <option name=\"number\" value=\"00026\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00026\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715184463170</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00027\" summary=\"ula\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715184606149</created>\r\n      <option name=\"number\" value=\"00027\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00027\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715184606149</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00028\" summary=\"novo header\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715186880181</created>\r\n      <option name=\"number\" value=\"00028\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00028\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715186880181</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00029\" summary=\"LOG-IN E LOGOUT\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715193746506</created>\r\n      <option name=\"number\" value=\"00029\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00029\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715193746506</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00030\" summary=\"LOGO VAI PARA HOMEPAGE\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715194060451</created>\r\n      <option name=\"number\" value=\"00030\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00030\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715194060451</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"31\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Projeto Criado\" />\r\n    <MESSAGE value=\"Projeto Django Criado &quot;siteclube&quot;\" />\r\n    <MESSAGE value=\"Aplicação Django Criada - &quot;clubehome&quot;\" />\r\n    <MESSAGE value=\"Estabelecimento de conexão, dos urls, entre server e app\" />\r\n    <MESSAGE value=\"Estabelecidas as ligações entre as views da app e os templates(HTML'S)\" />\r\n    <MESSAGE value=\"Tentativa 1\" />\r\n    <MESSAGE value=\"Alteração das DIRS\" />\r\n    <MESSAGE value=\"Alterações Necessárias( Possoveç Visualização da HomePage)\" />\r\n    <MESSAGE value=\"Ficheiro BD\" />\r\n    <MESSAGE value=\"Inserir os botoes de ligação as outras páginas (Loja e Plantel)\" />\r\n    <MESSAGE value=\"ajustes no urls\" />\r\n    <MESSAGE value=\"Inicio da estretura da Homepage\" />\r\n    <MESSAGE value=\"Inserção do Logo\" />\r\n    <MESSAGE value=\"header homepage\" />\r\n    <MESSAGE value=\"Alterações Homepage\" />\r\n    <MESSAGE value=\"Criação do Modelos do Projeto Antigo\" />\r\n    <MESSAGE value=\"Adicionar o Login\" />\r\n    <MESSAGE value=\"CSS DENTRO DO LOGIN\" />\r\n    <MESSAGE value=\"App no settings\" />\r\n    <MESSAGE value=\"ula\" />\r\n    <MESSAGE value=\"novo header\" />\r\n    <MESSAGE value=\"LOG-IN E LOGOUT\" />\r\n    <MESSAGE value=\"LOGO VAI PARA HOMEPAGE\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"LOGO VAI PARA HOMEPAGE\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d53ba46ce921275acf95eb0201778125152f02fe)
++++ b/.idea/workspace.xml	(date 1715251557984)
+@@ -4,16 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="LOGO VAI PARA HOMEPAGE">
+-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/style.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__16_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__16_57__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__17_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__17_07__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__17_07__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__17_07__Changes_1.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__19_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2024__19_01__Changes_.xml" afterDir="false" />
++    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="ACHO QUE JA NAO ESTA FODIDO">
++      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_jogo.html" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
+@@ -46,14 +40,12 @@
+     &quot;assignee&quot;: &quot;tiagomonteiroo&quot;
+   }
+ }</component>
+-  <component name="GithubPullRequestsUISettings">
+-    <option name="selectedUrlAndAccountId">
+-      <UrlAndAccount>
+-        <option name="accountId" value="e25528ab-5aea-4941-ab2a-3368fde8868b" />
+-        <option name="url" value="https://github.com/tiagomonteiroo/SiteDesportivo.git" />
+-      </UrlAndAccount>
+-    </option>
+-  </component>
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/tiagomonteiroo/SiteDesportivo.git",
++    "accountId": "d3635519-5fea-440d-ba8c-43e4fe38f3da"
++  }
++}]]></component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+@@ -114,7 +106,7 @@
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
++        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -367,7 +359,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1715194060451</updated>
+     </task>
+-    <option name="localTasksCounter" value="31" />
++    <task id="LOCAL-00031" summary="ACHO QUE JA NAO ESTA FODIDO">
++      <option name="closed" value="true" />
++      <created>1715206808269</created>
++      <option name="number" value="00031" />
++      <option name="presentableId" value="LOCAL-00031" />
++      <option name="project" value="LOCAL" />
++      <updated>1715206808269</updated>
++    </task>
++    <option name="localTasksCounter" value="32" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -405,6 +405,7 @@
+     <MESSAGE value="novo header" />
+     <MESSAGE value="LOG-IN E LOGOUT" />
+     <MESSAGE value="LOGO VAI PARA HOMEPAGE" />
+-    <option name="LAST_COMMIT_MESSAGE" value="LOGO VAI PARA HOMEPAGE" />
++    <MESSAGE value="ACHO QUE JA NAO ESTA FODIDO" />
++    <option name="LAST_COMMIT_MESSAGE" value="ACHO QUE JA NAO ESTA FODIDO" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: siteclube/clubehome/templates/clubehome/criar_jogo.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/siteclube/clubehome/templates/clubehome/criar_jogo.html b/siteclube/clubehome/templates/clubehome/criar_jogo.html
+new file mode 100644
+--- /dev/null	(date 1715250999848)
++++ b/siteclube/clubehome/templates/clubehome/criar_jogo.html	(date 1715250999848)
+@@ -0,0 +1,34 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Criar Jogo</title>
++</head>
++<body>
++    <h1>Criar Novo Jogo</h1>
++    <form method="post">
++        {% csrf_token %}
++        <label for="adversario">Adversário:</label><br>
++        <input type="text" id="adversario" name="adversario" maxlength="50"><br><br>
++
++        <label for="golos_clube">Golos do Clube:</label><br>
++        <input type="number" id="golos_clube" name="golos_clube" min="0"><br><br>
++
++        <label for="golos_adversario">Golos do Adversário:</label><br>
++        <input type="number" id="golos_adversario" name="golos_adversario" min="0"><br><br>
++
++        <label for="local">Local:</label><br>
++        <select id="local" name="local">
++            <option value="casa">Casa</option>
++            <option value="fora">Fora</option>
++        </select><br><br>
++
++        <label for="data_jogo">Data do Jogo:</label><br>
++        <input type="date" id="data_jogo" name="data_jogo" value="{% now 'Y-%m-%d' %}"><br><br>
++
++        <input type="submit" value="Criar Jogo">
++    </form>
++</body>
++</html>
++
