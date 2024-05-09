@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from .models import UserDetails,Treinador,Jogador, Noticia, Produto
+from .models import UserDetails,Treinador,Jogador, Noticia, Produto, Jogo
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -52,11 +52,23 @@ def criar_noticia(request):
         return redirect('noticias')
     return render(request, 'clubehome/criar_noticia.html')
 
-def ultimas_quatro_noticias(request):
-    ultimas_noticias = Noticia.objects.order_by('-data_publicacao')[:4]
-    context = {'ultimas_noticias': ultimas_noticias}
-    return render(request, 'clubehome/noticias.html', context)
+def criar_jogo(request):
+    if request.method == 'POST':
+        adversario = request.POST.get('adversario')
+        golos_clube = request.POST.get('golos_clube')
+        golos_adversario = request.POST.get('golos_adversario')
+        local = request.POST.get('local')
+        data_jogo = request.POST.get('data_jogo')
+        Jogo.objects.create(adversario=adversario, golos_clube=golos_clube, golos_adversario=golos_adversario, local=local,data_jogo=data_jogo)
+        return redirect('noticias')
+    return render(request, 'clubehome/criar_jogo.html')
 
+
+def ultimas_quatro(request):
+    ultimas_noticias = Noticia.objects.order_by('-data_publicacao')[:4]
+    ultimos_jogos = Jogo.objects.order_by('-data_jogo')[:4]
+    context = {'ultimos_jogos': ultimos_jogos, 'ultimas_noticias': ultimas_noticias}
+    return render(request, 'clubehome/noticias.html', context)
 def loja(request):
     produtos = Produto.objects.all()
     context = {'produtos' : produtos}

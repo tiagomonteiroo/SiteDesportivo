@@ -7,11 +7,11 @@ urlpatterns = [
     path("plantel/", views.plantel_view, name = "plantel"),
     path("loja/", views.loja, name = "loja"),
     path("bilhetes/", views.bilhetes, name = "bilhetes"),
-    path("noticias/", views.ultimas_quatro_noticias, name = "noticias"),
+    path("noticias/", views.ultimas_quatro, name = "noticias"),
     path("clube/", views.clube, name = "clube"),
     path("socio/", views.socio, name = "socio"),
     path("registar/", views.criar_utilizador, name="registar"),
     path("criarnoticia/", views.criar_noticia, name="criar_noticia"),
-    path("logout/", views.logout, name="logout"),
-    path("criarproduto/", views.criar_produto, name="criar-produto")
+    path("criarjogo/", views.criar_jogo, name="criar_jogo"),
+    path("logout/", views.logout, name="logout")
 ]

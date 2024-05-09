@@ -57,7 +57,7 @@ nav {
 }
 
 .ladlad {
-    display: flex;
+
 }
 
 .news {
@@ -85,7 +85,8 @@ nav {
 }
 
 .recent-games {
-    margin-left: auto;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     background-color: #808080;
     width: 20%;
