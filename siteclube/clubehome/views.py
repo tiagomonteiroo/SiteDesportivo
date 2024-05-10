@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from .models import (UserDetails, Noticia, Jogo)
+from .models import (UserDetails, Noticia, Jogo, Product)
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -79,3 +79,18 @@ def clube(request):
 
 def socio(request):
     return render(request, "clubehome/socio.html")
+
+def loja(request):
+    produtos = Product.objects.all()
+    context = {'produtos': produtos}
+    return render(request, 'clubehome/loja.html', context)
+
+def criar_produto(request):
+        if request.method == 'POST':
+            nome = request.POST.get("nome")
+            preco = request.POST.get("preco")
+            type = request.POST.get("type")
+            imagem = request.FILES.get("imagem")
+            Product.objects.create(nome=nome, imagem=imagem, preco=preco, tipo=type)
+            return redirect('loja')
+        return render(request, 'clubehome/criar_produto.html')

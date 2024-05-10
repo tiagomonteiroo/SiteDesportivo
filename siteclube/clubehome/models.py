@@ -48,3 +48,9 @@ class Coach(models.Model):
     job = models.CharField(max_length=100)
     age = models.IntegerField()
     main = models.BooleanField(default=True)
+
+class Product(models.Model):
+    nome = models.CharField(max_length=100)
+    tipo = models.CharField(max_length=100, default='Produto')
+    imagem = models.ImageField(upload_to='clubehome/static/imagens/')
+    preco = models.IntegerField(default=0)

@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="LOJA">
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="APAGAR LOJA BILHETE">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0007_remove_venda_produto_delete_bilhete_delete_produto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0008_product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
@@ -414,7 +416,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715364264921</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="APAGAR LOJA BILHETE">
+      <option name="closed" value="true" />
+      <created>1715365297853</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1715365297853</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,7 +440,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aplicação Django Criada - &quot;clubehome&quot;" />
     <MESSAGE value="Estabelecimento de conexão, dos urls, entre server e app" />
     <MESSAGE value="Estabelecidas as ligações entre as views da app e os templates(HTML'S)" />
     <MESSAGE value="Tentativa 1" />
@@ -455,6 +464,7 @@
     <MESSAGE value="NAO TOCAR VIEWS IMPORTS" />
     <MESSAGE value="NOVO CLUBE GLUGLU FC" />
     <MESSAGE value="LOJA" />
-    <option name="LAST_COMMIT_MESSAGE" value="LOJA" />
+    <MESSAGE value="APAGAR LOJA BILHETE" />
+    <option name="LAST_COMMIT_MESSAGE" value="APAGAR LOJA BILHETE" />
   </component>
 </project>
