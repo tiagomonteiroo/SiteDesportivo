@@ -57,7 +57,7 @@ nav {
 }
 
 .ladlad {
-    display: flex;
+
 }
 
 .news {
@@ -85,7 +85,8 @@ nav {
 }
 
 .recent-games {
-    margin-left: auto;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     background-color: #808080;
     width: 20%;
@@ -106,4 +107,57 @@ float: right;
 }
 .loginoff-box{
 float: left;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.club-history {
+    background-color: #263B5C;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+    border: 2px solid #fff;
+    flex: 0 0 70%;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 0 0 30%;
+}
+
+.images img {
+    width: 80%;
+    height: auto;
+    margin-top: 20px;
+    border-right: 100px solid #121f27;
+}
+
+footer {
+    background-color: #121f27;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    width: 200px;
+}
+
+.contact-box {
+    max-width: 200px;
+}
+
+.contact-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    font-size: 16px;
+    margin-bottom: 5px;
 }

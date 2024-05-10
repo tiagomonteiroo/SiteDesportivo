@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="BASE DE DADOS FINE" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="POR FAVOR FUNCEMINA">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_05_2024__16_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_05_2024__16_57__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/clube.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/clube.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,14 +38,12 @@
     &quot;assignee&quot;: &quot;tiagomonteiroo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="e25528ab-5aea-4941-ab2a-3368fde8868b" />
-        <option name="url" value="https://github.com/tiagomonteiroo/SiteDesportivo.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/tiagomonteiroo/SiteDesportivo.git",
+    "accountId": "d3635519-5fea-440d-ba8c-43e4fe38f3da"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -101,7 +105,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
@@ -370,13 +374,13 @@
       <option name="project" value="LOCAL" />
       <updated>1715262062093</updated>
     </task>
-    <task id="LOCAL-00033" summary="BASE DE DADOS FINE">
+    <task id="LOCAL-00033" summary="NAO TOCAR VIEWS IMPORTS">
       <option name="closed" value="true" />
-      <created>1715336169340</created>
+      <created>1715336417719</created>
       <option name="number" value="00033" />
       <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1715336169340</updated>
+      <updated>1715336417719</updated>
     </task>
     <option name="localTasksCounter" value="34" />
     <servers />
@@ -394,6 +398,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Projeto Criado" />
     <MESSAGE value="Projeto Django Criado &quot;siteclube&quot;" />
     <MESSAGE value="Aplicação Django Criada - &quot;clubehome&quot;" />
     <MESSAGE value="Estabelecimento de conexão, dos urls, entre server e app" />
@@ -418,7 +423,6 @@
     <MESSAGE value="LOGO VAI PARA HOMEPAGE" />
     <MESSAGE value="AlTERAÇÔES MODELO" />
     <MESSAGE value="NAO TOCAR VIEWS IMPORTS" />
-    <MESSAGE value="BASE DE DADOS FINE" />
-    <option name="LAST_COMMIT_MESSAGE" value="BASE DE DADOS FINE" />
+    <option name="LAST_COMMIT_MESSAGE" value="NAO TOCAR VIEWS IMPORTS" />
   </component>
 </project>

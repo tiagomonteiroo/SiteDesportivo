@@ -3,12 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLUBE | Site Oficial do Glu Glu Futebol Clube</title>
+        <title>CLUBE | Site Oficial do Glu Glu Futebol Clube</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styling.css' %}"/>
 </head>
 <body>
-<h1>PAGINA DO CLUBE</h1>
+    <header>
+        <div class="header-logo">
+            <div class="logo">
+                <a href="{% url 'homepage' %}">
+                    <img src="{% static 'logo.png' %}" alt="logotipo">
+                </a>
+            </div>
+                <nav>
+                    <a href="{% url 'noticias' %}" class="box">Notícias</a>
+                    <a href="{% url 'plantel' %}" class="box">Plantel</a>
+                    <a href="{% url 'bilhetes' %}" class="box">Bilhetes</a>
+                    <a href="{% url 'clube' %}" class="box">Clube</a>
+                    <a href="{% url 'socio' %}" class="box">Sócio</a>
+                    <a href="{% url 'loja' %}" class="box">Loja</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="box">Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="box">Conta</a>
+                    {% endif %}
+                </nav>
+        </div>
+    </header>
 
-<a href="{% url 'homepage' %}"><button>Voltar à Homepage</button></a>
+    <main class="flex-container">
+        <div class="club-history">
+            <h1>História do Gluglu Futebol Clube</h1>
+            <p>O Gluglu Futebol Clube foi fundado em 1975 na cidade de Glugluvillage por um grupo de entusiastas do futebol local. Desde então, o clube cresceu para se tornar uma das instituições desportivas mais predominantes do país.</p>
+            <p>O clube foi fundado por um jovem de nome Gilberto que reuniu todos os seus colegas e decidiu que devido à pouca presença do futebol na sua região, seria uma boa ideia criar um clube de futebol naquela região.</p>
+            <p>O fundador inicial Gilberto Tiburcio cresceu vindo de uma família de poucas posses, sendo desde pequeno um grande amante do futebol. O seu pai era abusivo e a sua mãe sempre o apoiou no sonho de se tornar futebolista.</p>
 
+            <h2>Conquistas</h2>
+            <ul>
+                <li><strong>Campeonato Nacional:</strong> O Gluglu FC conquistou o título do Campeonato Nacional por cinco vezes, nos anos de 1982, 1995, 2007, 2013 e 2019.</li>
+                <li><strong>Copa Gluglu:</strong> O clube levantou a taça da Copa Gluglu em três ocasiões, em 1988, 2000 e 2015.</li>
+                <li><strong>Supercopa Regional:</strong> Além disso, o Gluglu FC foi vitorioso na Supercopa Regional em quatro temporadas, em 1998, 2005, 2010 e 2017.</li>
+                <li><strong>Mundial de Clubes:</strong> O Gluglu FC conquistou o título do Mundial de Clubes por sete vezes, nos anos de 2004, 2010, 2015, 2016, 2017 e 2019.</li>
+                <li><strong>Europa League:</strong> O clube levantou a taça da Copa Gluglu em três ocasiões, em 1988, 2000 e 2007.</li>
+                <li><strong>Champions League:</strong> Além disso, o Gluglu FC foi vitorioso na Champions League em 9 temporadas, em 1998, 2001, 2003, 2004, 2010, 2015, 2016, 2017 e 2019.</li>
+            </ul>
+
+            <p>Fundado num meio de paixão pelo futebol, o Gluglu FC emergiu como uma luz brilhante no cenário desportivo de Glugluvillage. Gilberto Tiburcio, visionário e líder, transformou um sonho em realidade, inspirando a comunidade local a abraçar o desporto como um símbolo de esperança e união.</p>
+            <p>Desde a sua origem humilde, o clube enfrentou desafios monumentais, tanto dentro como fora dos campos. Com determinação inabalável, os jogadores do Gluglu FC superaram obstáculos e adversidades, conquistando não apenas títulos, mas também o coração dos fãs que fervilham de emoção em cada partida.</p>
+            <p>Ao longo dos anos, o Gluglu FC estabeleceu uma tradição de excelência e compromisso com o sucesso. Sob a liderança de Gilberto e de seus sucessores, o clube floresceu, tornando-se uma potência tanto nacional quanto internacional, com conquistas que ecoam além das fronteiras.</p>
+            <p>Com uma base sólida de valores angariados no trabalho árduo, na dedicação e no espírito desportivo, o Gluglu FC continua a sua jornada de glórias e conquistas. Cada jogo é mais uma oportunidade de inspirar, unir e celebrar o amor pelo futebol, escrevendo assim mais um capítulo emocionante na sua história gloriosa.</p>
+            <p>Com um legado de sucesso e uma claque de apaixonados, o Gluglu FC continua em busca de novas glórias nos campos de futebol, enquanto mantém os seus valores de trabalho em equipa, dedicação e fair play (quando lhes dá jeito).</p>
+
+            <h2>Jogadores que passaram pelo Gluglu FC e se ganharam a Bola de Ouro</h2>
+            <ul>
+                <li><strong>Lionel Guglu:</strong> Iniciou a sua carreira no Gluglu FC em 2003 e rapidamente se destacou como uma estrela em ascensão. As suas fintas habilidosas e visão de jogo excepcional levaram-no a conquistar muitos títulos pelo clube, culminando na vitória na Bola de Ouro em 2012.</li>
+                <li><strong>Cristiano Gluglu:</strong> Chegou ao Gluglu FC em 2007 e deixou sua marca imediatamente, ao marcar golos decisivos e a liderar o time à vitória em competições nacionais e internacionais. A sua determinação e habilidade inigualável tornaram-no um vencedor da Bola de Ouro em 2014.</li>
+                <li><strong>Neymar Gluglu:</strong> Contratado pelo Gluglu FC em 2016, Neymar rapidamente se tornou uma sensação mundial, com as suas habilidades técnicas e dribles fascinantes. A sua contribuição para o sucesso do clube levou-o a ganhar a Bola de Ouro em 2020, consolidando o seu lugar na história do futebol.</li>
+            </ul>
+        </div>
+        <div class="images">
+            <img src="{% static 'gluglu_antigo.png' %}" alt="logo_antigo">
+            <img src="{% static 'gluglu_equipa.png' %}" alt="equipa">
+        </div>
+    </main>
+
+    <footer>
+        <div class="contact-box">
+            <h3>Contactos</h3>
+            <p>Email: info@gluglufc.com</p>
+            <p>Telefone: +123456789</p>
+            <p>Endereço: Rua do Futebol, Glugluvillage</p>
+        </div>
+    </footer>
 </body>
 </html>
