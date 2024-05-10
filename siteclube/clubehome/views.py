@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from .models import (UserDetails, Noticia, Produto, Jogo)
+from .models import (UserDetails, Noticia, Jogo)
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -65,26 +65,11 @@ def ultimas_quatro(request):
     ultimos_jogos = Jogo.objects.order_by('-data_jogo')[:4]
     context = {'ultimos_jogos': ultimos_jogos, 'ultimas_noticias': ultimas_noticias}
     return render(request, 'clubehome/noticias.html', context)
-def loja(request):
-    produtos = Produto.objects.all()
-    context = {'produtos' : produtos}
-    return render(request, "clubehome/loja.html", context)
 
-def criar_produto (request):
-    if request.method == 'POST':
-        nome = request.POST.get("nome")
-        preco = request.POST.get("preco")
-        type = request.POST.get("type")
-        imagem = request.FILES.get("imagem")
-        Produto.objects.create(nome=nome, preco=preco,type=type,imag=imagem)
-        return redirect('loja')
-    return render(request, 'clubehome/criar_produto.html')
 
 def plantel(request):
     return render(request, 'clubehome/plantel.html')
 
-def bilhetes(request):
-    return render(request, "clubehome/bilhetes.html")
 
 def noticias(request):
     return render(request, "clubehome/noticias.html")

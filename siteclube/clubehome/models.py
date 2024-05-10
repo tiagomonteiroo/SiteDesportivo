@@ -3,12 +3,6 @@ import os.path
 from django.contrib.auth.models import User
 from django.db import models
 
-class Produto(models.Model):
-    nome = models.CharField(max_length=100)
-    preco = models.DecimalField(max_digits=10, decimal_places=2)
-    type = models.CharField(max_length=100, default="Produto")
-    imag = models.ImageField(upload_to='clubehome/static/produtos/', null=True, blank=True)
-
 
 class UserDetails(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -16,14 +10,9 @@ class UserDetails(models.Model):
     is_socio = models.BooleanField(default=False)
     NIF = models.IntegerField(default=0)
 
-class Bilhete(Produto):
-    data = models.DateField()
-    lugar = models.IntegerField()
-    N_Emissao = models.IntegerField()
 
 class Venda(models.Model):
     utilizador = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
-    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     data = models.DateField(auto_now_add=True)
 
 class Noticia(models.Model):
