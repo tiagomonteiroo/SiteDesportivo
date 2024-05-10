@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja | Site Oficial do Glu Glu Futebol Clube</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'loja.css' %}">
+    <link rel="stylesheet" href="{% static 'store.css' %}">
 </head>
 <body>
 <header>
@@ -35,6 +35,7 @@
         <div class="grelha">
             {% for produto in produtos %}
             <div class="grelha-item">
+                <img src="/static/produtos/{{produto.imagem}}" alt="{{produto.nome}}">
                 <h2>{{ produto.nome }}</h2>
                 <p>Preço: {{ produto.preco }} €</p>
                 <p>Tipo: {{ produto.type }}

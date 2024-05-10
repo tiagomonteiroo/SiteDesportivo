@@ -1,3 +1,5 @@
+import os.path
+
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -5,6 +7,17 @@ class Produto(models.Model):
     nome = models.CharField(max_length=100)
     preco = models.DecimalField(max_digits=10, decimal_places=2)
     type = models.CharField(max_length=100, default="Produto")
+    imagem = models.ImageField(upload_to='clubehome/static/produtos', default='clubehome/static/logo.png')
+
+    def __str__(self):
+        return self.nome
+
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            existing_products_count = Produto.objects.count()
+            filename = f'produto{existing_products_count+1}.png'
+            self.imagem.name = os.path.join('clubehome/static/produtos', filename)
+        super().save(*args, **kwargs)
 
 class UserDetails(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
