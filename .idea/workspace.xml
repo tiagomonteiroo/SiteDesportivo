@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="NOVO CLUBE GLUGLU FC">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0004_produto_imagem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/store.css" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="LOJA">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0005_alter_produto_imagem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0006_rename_imagem_produto_imag.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/loja.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/loja.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/clube.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/clube.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,10 +70,14 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "LOJA"
+    "git-widget-placeholder": "LOJA",
+    "last_opened_file_path": "/Users/tiagomonteiro/PycharmProjects/Projeto_DIAM/siteclube/clubehome/static/produtos"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/siteclube/clubehome/static/produtos" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/siteclube/clubehome/static" />
       <recent name="C:\Users\jxbar\PycharmProjects\SiteDesportivo\siteclube\clubehome\static" />
@@ -395,7 +398,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715336724571</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="LOJA">
+      <option name="closed" value="true" />
+      <created>1715357116898</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1715357116898</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -411,7 +422,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Projeto Django Criado &quot;siteclube&quot;" />
     <MESSAGE value="Aplicação Django Criada - &quot;clubehome&quot;" />
     <MESSAGE value="Estabelecimento de conexão, dos urls, entre server e app" />
     <MESSAGE value="Estabelecidas as ligações entre as views da app e os templates(HTML'S)" />
@@ -436,6 +446,7 @@
     <MESSAGE value="AlTERAÇÔES MODELO" />
     <MESSAGE value="NAO TOCAR VIEWS IMPORTS" />
     <MESSAGE value="NOVO CLUBE GLUGLU FC" />
-    <option name="LAST_COMMIT_MESSAGE" value="NOVO CLUBE GLUGLU FC" />
+    <MESSAGE value="LOJA" />
+    <option name="LAST_COMMIT_MESSAGE" value="LOJA" />
   </component>
 </project>

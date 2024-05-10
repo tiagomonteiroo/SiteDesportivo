@@ -35,7 +35,9 @@
         <div class="grelha">
             {% for produto in produtos %}
             <div class="grelha-item">
-                <img src="/static/produtos/{{produto.imagem}}" alt="{{produto.nome}}">
+                {% if produto.imagem %}
+                <img src="{% produto.imagem.url }}" alt="{{ produto.nome }}" width="200">
+                {% endif %}
                 <h2>{{ produto.nome }}</h2>
                 <p>Preço: {{ produto.preco }} €</p>
                 <p>Tipo: {{ produto.type }}
