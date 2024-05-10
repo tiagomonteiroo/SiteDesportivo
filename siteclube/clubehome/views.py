@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from .models import UserDetails,Treinador,Jogador, Noticia, Produto, Jogo
+from .models import (UserDetails, Noticia, Produto, Jogo)
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -36,11 +36,7 @@ def logout(request):
     auth_logout(request)
     return redirect('homepage')
 
-def plantel_view(request):
-    # Obter todos os treinadores e jogadores do banco de dados
-    treinadores = Treinador.objects.all()
-    jogadores = Jogador.objects.all()
-    return render(request, 'clubehome/plantel.html', {'treinadores': treinadores, 'jogadores': jogadores})
+
 
 def criar_noticia(request):
     if request.method == 'POST':
@@ -82,6 +78,9 @@ def criar_produto (request):
         Produto.objects.create(nome=nome, preco=preco,type=type)
         return redirect('loja')
     return render(request, 'clubehome/criar_produto.html')
+
+def plantel(request):
+    return render(request, 'clubehome/plantel.html')
 
 def bilhetes(request):
     return render(request, "clubehome/bilhetes.html")

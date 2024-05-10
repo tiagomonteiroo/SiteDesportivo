@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="NAO TOCAR VIEWS IMPORTS">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0008_merge_20240509_1558.py" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="POR FAVOR FUNCEMINA">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0002_coach_player.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0003_delete_jogador.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0002_remove_utilizador_conta_ptr_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0003_venda.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0004_noticia.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0005_jogo_alter_noticia_imagem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0005_produto_tipo_alter_noticia_imagem_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0006_rename_tipo_produto_type.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0007_merge_20240509_1451.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0007_remove_produto_id_prod.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0008_merge_20240509_1558.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
