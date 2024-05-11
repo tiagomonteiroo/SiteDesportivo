@@ -2,23 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja | Site Oficial do Glu Glu Futebol Clube</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'loja.css' %}">
+       <link rel="stylesheet" href="{% static 'loja.css' %}">
 </head>
 <body>
-<header>
+     <header>
         <div class="header-logo">
             <div class="logo">
                 <a href="{% url 'homepage' %}">
                     <img src="{% static 'logo.png' %}" alt="logotipo">
                 </a>
             </div>
-                <nav>
-                    <a href="{% url 'noticias' %}" class="box">Notícias</a>
+            <nav>
+                <a href="{% url 'noticias' %}" class="box">Notícias</a>
                     <a href="{% url 'plantel' %}" class="box">Plantel</a>
-                    <a href="{% url 'bilhetes' %}" class="box">Bilhetes</a>
                     <a href="{% url 'clube' %}" class="box">Clube</a>
                     <a href="{% url 'socio' %}" class="box">Sócio</a>
                     <a href="{% url 'loja' %}" class="box">Loja</a>
@@ -27,11 +25,11 @@
                     {% else %}
                     <a href="{% url 'login' %}" class="box">Conta</a>
                     {% endif %}
-                </nav>
-        </div><br>
+        </nav>
+        </div>
     </header>
-    <main>
-        <a href="{% url 'criar-produto' %}"><button>Criar Produto</button></a>
+<main>
+        <a href="{% url 'criar-produto' %}" class="box">Criar Produto</a>
         <div class="grelha">
             {% for produto in produtos %}
             <div class="grelha-item">
@@ -41,6 +39,7 @@
             </div>
             {% endfor %}
         </div>
-    </main>
+</main>
+
 </body>
 </html>
