@@ -96,8 +96,9 @@ def criar_produto (request):
     if request.method == 'POST':
         nome = request.POST.get("nome")
         preco = request.POST.get("preco")
-        type = request.POST.get("type")
-        Product.objects.create(nome=nome, preco=preco,type=type)
+        tipo = request.POST.get("tipo")
+        imagem = request.FILES.get("imagem")
+        Product.objects.create(nome=nome, imagem=imagem,  preco=preco, tipo=tipo)
         return redirect('loja')
     return render(request, 'clubehome/criar_produto.html')
 

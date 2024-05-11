@@ -52,5 +52,5 @@ class Coach(models.Model):
 class Product(models.Model):
     nome = models.CharField(max_length=100)
     tipo = models.CharField(max_length=100, default='Produto')
-    imagem = models.ImageField(upload_to='clubehome/static/imagens/')
+    imagem = models.ImageField(upload_to='clubehome/static/imagens/', default='clubehome/static/logo.png')
     preco = models.IntegerField(default=0)
