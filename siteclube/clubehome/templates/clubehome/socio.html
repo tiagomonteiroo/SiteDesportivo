@@ -4,11 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOCIO | Site Oficial do Glu Glu Futebol Clube</title>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'style2.css' %}"/>
 </head>
+<style>
+    .banner_socio{
+    border: 5px solid #ffc138;
+    }
+    .Butoes{
+    text-align: center;
+    }
+</style>
 <body>
-<h1>PAGINA DO SÓCIO</h1>
+    <header>
+        <div class="header-logo">
+            <div class="logo">
+                <a href="{% url 'homepage' %}">
+                    <img src="{% static 'logo.png' %}" alt="logotipo">
+                </a>
+            </div>
+                <nav>
+                    <a href="{% url 'noticias' %}" class="box">Notícias</a>
+                    <a href="{% url 'plantel' %}" class="box">Plantel</a>
+                    <a href="{% url 'bilhetes' %}" class="box">Bilhetes</a>
+                    <a href="{% url 'clube' %}" class="box">Clube</a>
+                    <a href="{% url 'socio' %}" class="box">Sócio</a>
+                    <a href="{% url 'loja' %}" class="box">Loja</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="box">Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="box">Conta</a>
+                    {% endif %}
+                </nav>
+        </div>
+    </header>
 
-<a href="{% url 'homepage' %}"><button>Voltar à Homepage</button></a>
 
+<img src="{% static 'BANNER SOCIO.png' %}" width="1460" class="banner_socio">
+    <div class="Butoes">
+{% if not user.userdetails.is_socio and user.is_authenticated %}
+    <a href="{% url 'tornasocio' %}" class="box">Torna-te Sócio</a>
+{% endif %}
+{% if user.userdetails.is_socio and user.is_authenticated %}
+    <a href="{% url 'deixasocio' %}" class="box">Cancelar Subscrição</a>
+{% endif %}
+        </div>
 </body>
 </html>
