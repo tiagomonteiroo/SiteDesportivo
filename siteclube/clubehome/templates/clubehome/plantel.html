@@ -37,98 +37,109 @@
         {% endif %}
         <br>
 
-        <img src="{% static 'glu-glu-equipa.jpeg' %}" alt="equipa" class="treinador">
-        <img src="{% static 'glu-glu-treinador.jpeg' %}" alt="treinadores" class="jogador">
-
-        <h1 class="TextoH1">EQUIPA TÉCNICA</h1>
-        <div class="treinador-box">
+        <h1 class="Texto">EQUIPA TÉCNICA</h1>
+        <div class="grelha">
             {% for treinador in treinadores %}
-                <h3>{{ treinador.name }}</h3>
-                <img src="{% static 'glu-glu-coach.jpeg' %}" alt="Treinador" class="coach">
-                <p>Função: {{ treinador.job }}</p>
-                <p>Idade: {{ treinador.age }}</p>
-                <p>Hierarquia: {% if treinador.main %}Principal{% else %}Não Principal{% endif %}</p>
+                <div class="grelha-item">
+                    <h3>{{ treinador.name }}</h3>
+                    <img src="{% static 'glu-glu-coach.jpeg' %}" alt="Treinador" class="coach">
+                    <p>Função: {{ treinador.job }}</p>
+                    <p>Idade: {{ treinador.age }}</p>
+                    <p>Hierarquia: {% if treinador.main %}Principal{% else %}Não Principal{% endif %}</p>
+                </div>
             {% endfor %}
         </div>
 
-        <h1 class="TextoH1">Jogadores</h1>
-        <ul class="jogador-box">
-            <h2>Guarda-Redes</h2>
+        <h1 class="Texto">Jogadores</h1>
+        <h2 class="Texto">Guarda-Redes</h2>
+        <div class="grelha">
             {% for jogador in jogadores %}
                 {% if jogador.position == "Guarda-Redes" %}
-                    <h3>{{ jogador.name }}</h3>
-                    <img src="{% static 'glu-glu-redes.jpeg' %}" alt="Guarda-Redes" class="redes">
-                    <p>Número: {{ jogador.number }}</p>
-                    <p>Posição: {{ jogador.position }}</p>
-                    <p>Idade: {{ jogador.age }}</p>
+                    <div class="grelha-item">
+                        <h3>{{ jogador.name }}</h3>
+                        <img src="{% static 'glu-glu-redes.jpeg' %}" alt="Guarda-Redes" class="redes">
+                        <p>Número: {{ jogador.number }}</p>
+                        <p>Posição: {{ jogador.position }}</p>
+                        <p>Idade: {{ jogador.age }}</p>
+                    </div>
                 {% endif %}
             {% endfor %}
-        </ul>
+        </div>
 
-        <ul class="jogador-box">
-            <h2>Lateral</h2>
+        <h2 class="Texto">Laterais</h2>
+        <div class="grelha">
             {% for jogador in jogadores %}
                 {% if jogador.position == "Lateral" %}
-                    <h3>{{ jogador.name }}</h3>
-                    <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
-                    <p>Número: {{ jogador.number }}</p>
-                    <p>Posição: {{ jogador.position }}</p>
-                    <p>Idade: {{ jogador.age }}</p>
+                    <div class="grelha-item">
+                        <h3>{{ jogador.name }}</h3>
+                        <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
+                        <p>Número: {{ jogador.number }}</p>
+                        <p>Posição: {{ jogador.position }}</p>
+                        <p>Idade: {{ jogador.age }}</p>
+                    </div>
                 {% endif %}
             {% endfor %}
-        </ul>
+        </div>
 
-        <ul class="jogador-box">
-            <h2>Central</h2>
+        <h2 class="Texto">Centrais</h2>
+        <div class="grelha">
             {% for jogador in jogadores %}
                 {% if jogador.position == "Central" %}
-                    <h3>{{ jogador.name }}</h3>
-                    <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
-                    <p>Número: {{ jogador.number }}</p>
-                    <p>Posição: {{ jogador.position }}</p>
-                    <p>Idade: {{ jogador.age }}</p>
+                    <div class="grelha-item">
+                        <h3>{{ jogador.name }}</h3>
+                        <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
+                        <p>Número: {{ jogador.number }}</p>
+                        <p>Posição: {{ jogador.position }}</p>
+                        <p>Idade: {{ jogador.age }}</p>
+                    </div>
                 {% endif %}
             {% endfor %}
-        </ul>
+        </div>
 
-        <ul class="jogador-box">
-            <h2>Médio</h2>
+        <h2 class="Texto">Médios</h2>
+        <div class="grelha">
             {% for jogador in jogadores %}
                 {% if jogador.position == "Médio" %}
-                    <h3>{{ jogador.name }}</h3>
-                    <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
-                    <p>Número: {{ jogador.number }}</p>
-                    <p>Posição: {{ jogador.position }}</p>
-                    <p>Idade: {{ jogador.age }}</p>
+                    <div class="grelha-item">
+                        <h3>{{ jogador.name }}</h3>
+                        <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
+                        <p>Número: {{ jogador.number }}</p>
+                        <p>Posição: {{ jogador.position }}</p>
+                        <p>Idade: {{ jogador.age }}</p>
+                    </div>
                 {% endif %}
             {% endfor %}
-        </ul>
+        </div>
 
-        <ul class="jogador-box">
-            <h2>Extremo</h2>
+        <h2 class="Texto">Extremos</h2>
+        <div class="grelha">
             {% for jogador in jogadores %}
                 {% if jogador.position == "Extremo" %}
-                    <h3>{{ jogador.name }}</h3>
-                    <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
-                    <p>Número: {{ jogador.number }}</p>
-                    <p>Posição: {{ jogador.position }}</p>
-                    <p>Idade: {{ jogador.age }}</p>
+                    <div class="grelha-item">
+                        <h3>{{ jogador.name }}</h3>
+                        <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
+                        <p>Número: {{ jogador.number }}</p>
+                        <p>Posição: {{ jogador.position }}</p>
+                        <p>Idade: {{ jogador.age }}</p>
+                    </div>
                 {% endif %}
             {% endfor %}
-        </ul>
+        </div>
 
-        <ul class="jogador-box">
-            <h2>Avançado</h2>
+        <h2 class="Texto">Avançados</h2>
+        <div class="grelha">
             {% for jogador in jogadores %}
                 {% if jogador.position == "Avançado" %}
-                    <h3>{{ jogador.name }}</h3>
-                    <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
-                    <p>Número: {{ jogador.number }}</p>
-                    <p>Posição: {{ jogador.position }}</p>
-                    <p>Idade: {{ jogador.age }}</p>
+                    <div class="grelha-item">
+                        <h3>{{ jogador.name }}</h3>
+                        <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
+                        <p>Número: {{ jogador.number }}</p>
+                        <p>Posição: {{ jogador.position }}</p>
+                        <p>Idade: {{ jogador.age }}</p>
+                    </div>
                 {% endif %}
             {% endfor %}
-        </ul>
+        </div>
 
     </main>
     <footer>

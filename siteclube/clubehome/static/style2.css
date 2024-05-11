@@ -197,6 +197,22 @@ img.player {
   margin-bottom: 5px;
 }
 
-.TextoH1 {
+.Texto {
     color: #fff;
+    margin-left:20px;
+}
+
+.grelha {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grelha-item {
+    background-color: #263B5C;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    color: #fff
 }
