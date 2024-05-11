@@ -31,11 +31,12 @@
 <main>
         <a href="{% url 'criar-produto' %}" class="box">Criar Produto</a>
         <div class="grelha">
-            {% for produto in produtos %}
+            {% for product in produtos %}
             <div class="grelha-item">
-                <h2>{{ produto.nome }}</h2>
-                <p>Preço: {{ produto.preco }} €</p>
-                <p>Tipo: {{ produto.type }}
+                <h2>{{ product.nome }}</h2>
+                <p>{{ product.imagem }}</p>
+                <p>Preço: {{ product.preco }} €</p>
+                <p>Tipo: {{ product.tipo }}
             </div>
             {% endfor %}
         </div>

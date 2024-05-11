@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="PLANTEL ATUALIZADO">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0009_alter_product_imagem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="LOJA + PRODUTOS NOVAMENTE (C/IMAGENS)">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0010_alter_product_imagem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/_6fc61d7b-4699-4af6-8e7c-6c9debb67b72.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto8.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
     </list>
@@ -413,7 +415,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715424095486</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="LOJA + PRODUTOS NOVAMENTE (C/IMAGENS)">
+      <option name="closed" value="true" />
+      <created>1715427601841</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1715427601841</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -429,7 +439,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Estabelecimento de conexão, dos urls, entre server e app" />
     <MESSAGE value="Estabelecidas as ligações entre as views da app e os templates(HTML'S)" />
     <MESSAGE value="Tentativa 1" />
     <MESSAGE value="Alteração das DIRS" />
@@ -454,6 +463,7 @@
     <MESSAGE value="NOVO CLUBE GLUGLU FC" />
     <MESSAGE value="IMAGENS GLUGLU FC" />
     <MESSAGE value="PLANTEL ATUALIZADO" />
-    <option name="LAST_COMMIT_MESSAGE" value="PLANTEL ATUALIZADO" />
+    <MESSAGE value="LOJA + PRODUTOS NOVAMENTE (C/IMAGENS)" />
+    <option name="LAST_COMMIT_MESSAGE" value="LOJA + PRODUTOS NOVAMENTE (C/IMAGENS)" />
   </component>
 </project>
