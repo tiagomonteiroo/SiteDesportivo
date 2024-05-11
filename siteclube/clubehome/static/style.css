@@ -161,3 +161,36 @@ footer {
     font-size: 16px;
     margin-bottom: 5px;
 }
+
+/* CSS para a organização das imagens e informações */
+
+/* Estilizando as imagens dos treinadores e jogadores */
+img.treinador,
+img.jogador {
+  width: 300px; /* Definindo o mesmo tamanho para as imagens */
+  height: auto;
+  margin-right: 20px; /* Espaçamento entre as imagens */
+}
+
+/* Estilizando as caixas dos treinadores e jogadores */
+.treinador-box,
+.jogador-box {
+  display: inline-block; /* Exibir as caixas lado a lado */
+  width: calc(50% - 10px); /* Cada caixa ocupa metade do espaço com uma margem de 10px entre elas */
+  margin-bottom: 20px; /* Espaçamento inferior entre as caixas */
+  vertical-align: top; /* Alinhamento vertical no topo */
+  padding: 10px; /* Espaçamento interno */
+  border: 1px solid #ccc; /* Borda */
+}
+
+/* Estilizando os títulos dos treinadores e jogadores */
+.treinador-box h3,
+.jogador-box h3 {
+  margin-top: 0; /* Removendo a margem superior */
+}
+
+/* Estilizando os parágrafos dos treinadores e jogadores */
+.treinador-box p,
+.jogador-box p {
+  margin-bottom: 5px; /* Espaçamento inferior entre os parágrafos */
+}

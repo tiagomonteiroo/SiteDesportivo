@@ -4,74 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLANTEL | Site Oficial do Glu Glu Futebol Clube</title>
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section h2 {
-            margin-bottom: 10px;
-        }
-
-        .player {
-            padding: 10px;
-            border: 1px solid #ccc;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-
-        .player p {
-            margin: 5px 0;
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style2.css' %}"/>
 </head>
 <body>
-    <div class="container">
-        <h1>Plantel da Equipe</h1>
+    <header>
+        <div class="header-logo">
+            <div class="logo">
+                <a href="{% url 'homepage' %}">
+                    <img src="{% static 'logo.png' %}" alt="logotipo">
+                </a>
+            </div>
+                <nav>
+                    <a href="{% url 'noticias' %}" class="box">Notícias</a>
+                    <a href="{% url 'plantel' %}" class="box">Plantel</a>
+                    <a href="{% url 'bilhetes' %}" class="box">Bilhetes</a>
+                    <a href="{% url 'clube' %}" class="box">Clube</a>
+                    <a href="{% url 'socio' %}" class="box">Sócio</a>
+                    <a href="{% url 'loja' %}" class="box">Loja</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="box">Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="box">Conta</a>
+                    {% endif %}
+                </nav>
+        </div>
+    </header>
+    <main>
+        {% if user.userdetails.is_admin and user.is_authenticated  %}
+            <a href="{% url 'criar_jogador' %}"><button>Criar Jogador</button></a>
+            <a href="{% url 'criar_treinador' %}"><button>Criar Treinador</button></a>
+        {% endif %}
+        <br>
 
-        <div class="section">
-            <h2>Treinadores</h2>
+        <img src="{% static 'glu-glu-equipa.jpeg' %}" alt="equipa" class="treinador">
+        <img src="{% static 'glu-glu-treinador.jpeg' %}" alt="treinadores" class="jogador">
+
+        <h1 class="TextoH1">Treinadores</h1>
+        <div class="treinador-box">
             {% for treinador in treinadores %}
-            <div class="player">
-                <p>Nome: {{ treinador.nome }}</p>
-                <p>Função: {{ treinador.funcao }}</p>
-                <p>Idade: {{ treinador.idade }}</p>
-            </div>
+                <h3>{{ treinador.name }}</h3>
+                <img src="{% static 'glu-glu-coach.jpeg' %}" alt="Treinador" class="coach">
+                <p>Função: {{ treinador.job }}</p>
+                <p>Idade: {{ treinador.age }}</p>
+                <p>Hierarquia: {% if treinador.main %}Principal{% else %}Não Principal{% endif %}</p>
             {% endfor %}
         </div>
 
-        <div class="section">
-            <h2>Jogadores</h2>
+        <h1 class="TextoH1">Jogadores</h1>
+        <ul class="jogador-box">
+            <h2>Guarda-Redes</h2>
             {% for jogador in jogadores %}
-            <div class="player">
-                <p>Nome: {{ jogador.nome }}</p>
-                <p>Posição: {{ jogador.get_posicao_display }}</p>
-                <p>Idade: {{ jogador.idade }}</p>
-                <p>Camisola: {{ jogador.numero }}</p>
-            </div>
+                {% if jogador.position == "Guarda-Redes" %}
+                    <h3>{{ jogador.name }}</h3>
+                    <img src="{% static 'glu-glu-redes.jpeg' %}" alt="Guarda-Redes" class="redes">
+                    <p>Número: {{ jogador.number }}</p>
+                    <p>Posição: {{ jogador.position }}</p>
+                    <p>Idade: {{ jogador.age }}</p>
+                {% endif %}
             {% endfor %}
+        </ul>
+
+        <ul class="jogador-box">
+            <h2>Lateral</h2>
+            {% for jogador in jogadores %}
+                {% if jogador.position == "Lateral" %}
+                    <h3>{{ jogador.name }}</h3>
+                    <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
+                    <p>Número: {{ jogador.number }}</p>
+                    <p>Posição: {{ jogador.position }}</p>
+                    <p>Idade: {{ jogador.age }}</p>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <ul class="jogador-box">
+            <h2>Central</h2>
+            {% for jogador in jogadores %}
+                {% if jogador.position == "Central" %}
+                    <h3>{{ jogador.name }}</h3>
+                    <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
+                    <p>Número: {{ jogador.number }}</p>
+                    <p>Posição: {{ jogador.position }}</p>
+                    <p>Idade: {{ jogador.age }}</p>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <ul class="jogador-box">
+            <h2>Médio</h2>
+            {% for jogador in jogadores %}
+                {% if jogador.position == "Médio" %}
+                    <h3>{{ jogador.name }}</h3>
+                    <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
+                    <p>Número: {{ jogador.number }}</p>
+                    <p>Posição: {{ jogador.position }}</p>
+                    <p>Idade: {{ jogador.age }}</p>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <ul class="jogador-box">
+            <h2>Extremo</h2>
+            {% for jogador in jogadores %}
+                {% if jogador.position == "Extremo" %}
+                    <h3>{{ jogador.name }}</h3>
+                    <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
+                    <p>Número: {{ jogador.number }}</p>
+                    <p>Posição: {{ jogador.position }}</p>
+                    <p>Idade: {{ jogador.age }}</p>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <ul class="jogador-box">
+            <h2>Avançado</h2>
+            {% for jogador in jogadores %}
+                {% if jogador.position == "Avançado" %}
+                    <h3>{{ jogador.name }}</h3>
+                    <img src="{% static 'glu-glu-jogador.jpeg' %}" alt="Jogador" class="player">
+                    <p>Número: {{ jogador.number }}</p>
+                    <p>Posição: {{ jogador.position }}</p>
+                    <p>Idade: {{ jogador.age }}</p>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+    </main>
+    <footer>
+        <div class="contact-box">
+            <h3>Contactos</h3>
+            <p>Email: info@gluglufc.com</p>
+            <p>Telefone: +123456789</p>
+            <p>Endereço: Rua do Futebol, Glugluvillage</p>
         </div>
-    </div>
+    </footer>
 </body>
 </html>

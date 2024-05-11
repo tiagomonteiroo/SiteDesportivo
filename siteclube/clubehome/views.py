@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from .models import (UserDetails, Noticia, Produto, Jogo)
+from .models import (UserDetails, Noticia, Produto, Jogo, Player, Coach)
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -36,8 +36,6 @@ def logout(request):
     auth_logout(request)
     return redirect('homepage')
 
-
-
 def criar_noticia(request):
     if request.method == 'POST':
         titulo = request.POST.get('titulo')
@@ -58,6 +56,29 @@ def criar_jogo(request):
         Jogo.objects.create(adversario=adversario, golos_clube=golos_clube, golos_adversario=golos_adversario, local=local,data_jogo=data_jogo)
         return redirect('noticias')
     return render(request, 'clubehome/criar_jogo.html')
+
+def criar_jogador(request):
+    if request.method == 'POST':
+        numero = request.POST.get('numero')
+        nome = request.POST.get('nome')
+        idade = request.POST.get('idade')
+        posicao = request.POST.get('posicao')
+        if nome and idade and posicao:
+            Player.objects.create(number=numero, name=nome, age=idade, position=posicao)
+            return redirect('plantel')
+        else:
+            return render(request, 'clubehome/criar_jogador.html',{'error_message': 'Todos os campos são obrigatórios!'})
+    return render(request, 'clubehome/criar_jogador.html')
+
+def criar_treinador(request):
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        cargo = request.POST.get('cargo')
+        idade = request.POST.get('idade')
+        principal = request.POST.get('principal') == 'on'
+        Coach.objects.create(name=nome, job=cargo, age=idade, main=principal)
+        return redirect('plantel')
+    return render(request, 'clubehome/criar_treinador.html')
 
 
 def ultimas_quatro(request):
@@ -80,7 +101,10 @@ def criar_produto (request):
     return render(request, 'clubehome/criar_produto.html')
 
 def plantel(request):
-    return render(request, 'clubehome/plantel.html')
+    jogadores = Player.objects.all()
+    treinadores = Coach.objects.all()
+    posicoes = ["Guarda-Redes", "Lateral", "Central", "Médio", "Extremo", "Avançado"]
+    return render(request, 'clubehome/plantel.html', {'jogadores': jogadores, 'treinadores': treinadores})
 
 def bilhetes(request):
     return render(request, "clubehome/bilhetes.html")
