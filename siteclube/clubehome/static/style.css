@@ -56,28 +56,31 @@ nav {
     margin-top: 10px;
 }
 
-.ladlad {
-
-}
-
 .news {
-    flex: 1;
+    display: flex;
     margin-top: 20px;
     padding: 20px;
-   background-color: #6758A3;
+    background-color: #6758A3;
     border-radius: 5px;
-    width: 65%;
+    width: 1000px;
     margin-left: 30px;
 }
 
 .news img {
-    max-width: 100%;
+    max-width: 200px;
     border-radius: 5px;
+    margin-right: 20px;
+}
+
+.news-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .news-title {
     font-size: 24px;
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 .news-description {
@@ -162,35 +165,57 @@ footer {
     margin-bottom: 5px;
 }
 
-/* CSS para a organização das imagens e informações */
-
-/* Estilizando as imagens dos treinadores e jogadores */
 img.treinador,
 img.jogador {
-  width: 300px; /* Definindo o mesmo tamanho para as imagens */
+  width: 300px;
   height: auto;
-  margin-right: 20px; /* Espaçamento entre as imagens */
+  margin-right: 20px;
 }
 
-/* Estilizando as caixas dos treinadores e jogadores */
+img.redes,
+img.coach,
+img.player {
+    width: 150px;
+    height: auto;
+}
+
 .treinador-box,
 .jogador-box {
-  display: inline-block; /* Exibir as caixas lado a lado */
-  width: calc(50% - 10px); /* Cada caixa ocupa metade do espaço com uma margem de 10px entre elas */
-  margin-bottom: 20px; /* Espaçamento inferior entre as caixas */
-  vertical-align: top; /* Alinhamento vertical no topo */
-  padding: 10px; /* Espaçamento interno */
-  border: 1px solid #ccc; /* Borda */
+  color: #fff;
+  display: inline-block;
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+  vertical-align: top;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 
-/* Estilizando os títulos dos treinadores e jogadores */
 .treinador-box h3,
 .jogador-box h3 {
-  margin-top: 0; /* Removendo a margem superior */
+  margin-top: 0;
 }
 
-/* Estilizando os parágrafos dos treinadores e jogadores */
 .treinador-box p,
 .jogador-box p {
-  margin-bottom: 5px; /* Espaçamento inferior entre os parágrafos */
+  margin-bottom: 5px;
+}
+
+.Texto {
+    color: #fff;
+    margin-left:20px;
+}
+
+.grelha {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grelha-item {
+    background-color: #263B5C;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    color: #fff
 }

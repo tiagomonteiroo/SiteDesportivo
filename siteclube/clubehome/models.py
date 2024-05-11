@@ -18,8 +18,20 @@ class Venda(models.Model):
 class Noticia(models.Model):
     titulo = models.CharField(max_length=25)
     descricao = models.CharField(max_length=100)
-    imagem = models.ImageField(upload_to='clubehome/static/noticias/')
+    imagem = models.ImageField(upload_to='clubehome/static/', null=True, blank=True)
+    imagem_nome = models.CharField(max_length=255, null=True, blank=True)
     data_publicacao = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.nome
+
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            existing_news_count = Noticia.objects.count()
+            filename = f'noticia{existing_news_count + 1}.png'
+            self.imagem.name = os.path.join('noticias', filename)
+            self.imagem_nome = filename
+        super().save(*args, **kwargs)
 
 
 class Jogo(models.Model):
