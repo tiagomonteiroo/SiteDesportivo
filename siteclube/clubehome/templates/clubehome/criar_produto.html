@@ -11,16 +11,19 @@
         <img src="{% static 'logo.png' %}" alt="logotipo">
         </a>
         <h2>Criar Produto</h2>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="nome">Nome do Produto: </label><br>
             <input type="text" id="nome" name="nome" required><br>
+
             <label for="preco">Preço: </label><br>
             <input type="number" id="preco" name="preco" required><br>
+
             <label for="imagem">Imagem: </label><br>
-            <input type="file" id="imagem" name="imagem" required><br>
-            <br><label for="type">Tipo:</label><br>
-            <input type="text" id="type" name="type" required><br>
+            <input type="file" id="imagem" name="imagem" accept="image/*" required><br>
+
+            <br><label for="tipo">Tipo:</label><br>
+            <input type="text" id="tipo" name="tipo" required><br>
             <button type="submit">Inserir Produto</button>
         </form>
     </div>

@@ -52,5 +52,17 @@ class Coach(models.Model):
 class Product(models.Model):
     nome = models.CharField(max_length=100)
     tipo = models.CharField(max_length=100, default='Produto')
-    imagem = models.ImageField(upload_to='clubehome/static/imagens/')
+    imagem = models.ImageField(upload_to='clubehome/static/', null=True, blank=True)
+    imagem_nome = models.CharField(max_length=255, null=True, blank=True)
     preco = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.nome
+
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            existing_products_count = Product.objects.count()
+            filename = f'produto{existing_products_count + 1}.png'
+            self.imagem.name = os.path.join('imagens', filename)
+            self.imagem_nome = filename
+        super().save(*args, **kwargs)
