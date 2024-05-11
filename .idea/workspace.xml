@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="IMAGENS GLUGLU FC">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/glu-glu-coach.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/glu-glu-equipa.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/glu-glu-jogador.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/glu-glu-redes.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/glu-glu-treinador.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/style2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_jogador.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_treinador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="PLANTEL ATUALIZADO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/plantel.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/plantel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
@@ -416,7 +402,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715337234854</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="PLANTEL ATUALIZADO">
+      <option name="closed" value="true" />
+      <created>1715424095486</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1715424095486</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -432,7 +426,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aplicação Django Criada - &quot;clubehome&quot;" />
     <MESSAGE value="Estabelecimento de conexão, dos urls, entre server e app" />
     <MESSAGE value="Estabelecidas as ligações entre as views da app e os templates(HTML'S)" />
     <MESSAGE value="Tentativa 1" />
@@ -457,6 +450,7 @@
     <MESSAGE value="NAO TOCAR VIEWS IMPORTS" />
     <MESSAGE value="NOVO CLUBE GLUGLU FC" />
     <MESSAGE value="IMAGENS GLUGLU FC" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMAGENS GLUGLU FC" />
+    <MESSAGE value="PLANTEL ATUALIZADO" />
+    <option name="LAST_COMMIT_MESSAGE" value="PLANTEL ATUALIZADO" />
   </component>
 </project>
