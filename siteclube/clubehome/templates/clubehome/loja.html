@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <title>Loja | Site Oficial do Glu Glu Futebol Clube</title>
     {% load static %}
-       <link rel="stylesheet" href="{% static 'loja.css' %}">
+       <link rel="stylesheet" href="{% static 'store.css' %}">
 </head>
+<style>
+    .creation{
+    font-size: 15px;
+    color: #fff;
+    background-color: #ffc138;
+    text-decoration: none;
+    padding: 10px;
+    margin: 40px 0;
+}
+.creation:hover{
+    background-color: #e89d10;
+}
+</style>
 <body>
      <header>
         <div class="header-logo">
@@ -28,9 +41,15 @@
         </nav>
         </div>
     </header>
-<main>
-        <a href="{% url 'criar-produto' %}" class="box">Criar Produto</a>
-        <div class="grelha">
+<br><main>
+         {% if user.is_authenticated and user.userdetails.is_admin %}
+         <div class="linha">
+            <a href="{% url 'criar-produto' %}" class="creation">Criar Produto</a>
+            <a class="creation">Eliminar Produto</a>
+         </div>
+         {% endif %}
+
+         <div class="grelha">
             {% for product in produtos %}
             <div class="grelha-item">
                 {% if product.imagem_nome %}
@@ -39,6 +58,9 @@
                 <h2>{{ product.nome }}</h2>
                 <p>Preço: {{ product.preco }} €</p>
                 <p>Tipo: {{ product.tipo }}</p>
+                {% if user.UserDetails.is_admin and user.is_authenticated %}
+                <p>ID Produto: {{ product.id }}</p>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
