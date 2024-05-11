@@ -3,14 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}"/>
 </head>
+<style>
+    .centro{
+    text-align: center;
+    }
+</style>
 <body>
-    <h1>Tornar Sócio</h1>
+    <div class="centro">
+        <a href="{% url 'homepage' %}">
+        <img src="{% static 'logo.png' %}" alt="logotipo">
+        </a>
+        {% if user.is_authenticated and not user.userdetails.is_socio %}
+        <h1>Tornar Sócio</h1>
+    {% endif %}
+
+    {% if user.is_authenticated and user.userdetails.is_socio %}
+    <h1>Cancelar Subscrição</h1>
+    {% endif %}
     <form method="post">
         {% csrf_token %}
         <label for="username">Nome de usuário:</label><br>
-        <input type="text" id="username" name="username"><br><br>
+        <br><input type="text" id="username" name="username"><br><br>
+        {% if user.is_authenticated and not user.userdetails.is_socio %}
         <button type="submit">Tornar Sócio</button>
+        {% endif %}
+        {% if user.is_authenticated and user.userdetails.is_socio %}
+        <button type="submit">Cancelar </button>
+        {% endif %}
     </form>
 </body>
 </html>
