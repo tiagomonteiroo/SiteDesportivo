@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="LOJA FINALIZADA">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/_6fc61d7b-4699-4af6-8e7c-6c9debb67b72.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto9.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/store.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/store.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/style2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/plantel.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/plantel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

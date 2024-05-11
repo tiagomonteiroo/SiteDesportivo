@@ -119,3 +119,21 @@ def clube(request):
 
 def socio(request):
     return render(request, "clubehome/socio.html")
+
+def torna_socio(request):
+    if request.method == "POST":
+        user = request.user
+        detalhes = UserDetails.objects.get(user=user)
+        detalhes.is_socio = True
+        detalhes.save()
+        return redirect('socio')
+    return render(request, "clubehome/tornasocio.html")
+
+def deixa_socio(request):
+    if request.method == "POST":
+        user = request.user
+        detalhes = UserDetails.objects.get(user=user)
+        detalhes.is_socio = False
+        detalhes.save()
+        return redirect('socio')
+    return render(request, "clubehome/tornasocio.html")
