@@ -6,9 +6,15 @@
     <title>SOCIO | Site Oficial do Glu Glu Futebol Clube</title>
 </head>
 <body>
-<h1>PAGINA DO SÓCIO</h1>
-
+{% if user.userdetails.is_socio %}
+    <h2>ES SOCIO</h2>
+{% endif %}
 <a href="{% url 'homepage' %}"><button>Voltar à Homepage</button></a>
-
+{% if not user.userdetails.is_socio and user.is_authenticated %}
+    <a href="{% url 'tornasocio' %}"><button>Torna-te Sócio</button></a>
+{% endif %}
+{% if user.userdetails.is_socio and user.is_authenticated %}
+    <a href="{% url 'deixasocio' %}"><button>Cancelar Sócio</button></a>
+{% endif %}
 </body>
 </html>

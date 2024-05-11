@@ -16,5 +16,6 @@ urlpatterns = [
     path("criarjogo/", views.criar_jogo, name="criar_jogo"),
     path("criarjogador/", views.criar_jogador, name="criar_jogador"),
     path("criartreinador/", views.criar_treinador, name="criar_treinador"),
-    path("logout/", views.logout, name="logout")
+    path("logout/", views.logout, name="logout"),
+    path("tornasocio/", views.torna_socio, name="tornasocio")
 ]
