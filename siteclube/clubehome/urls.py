@@ -18,5 +18,7 @@ urlpatterns = [
     path("criartreinador/", views.criar_treinador, name="criar_treinador"),
     path("logout/", views.logout, name="logout"),
     path("tornasocio/", views.torna_socio, name="tornasocio"),
-    path("deixasocio/", views.deixa_socio, name="deixasocio")
+    path("deixasocio/", views.deixa_socio, name="deixasocio"),
+    path("carrinho/", views.carrinho, name="carrinho"),
+    path("add-to-cart/", views.adicionar_carrinho, name='add-to-cart')
 ]

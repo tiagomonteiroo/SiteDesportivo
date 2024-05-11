@@ -1,7 +1,8 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
-from .models import (UserDetails, Noticia, Product, Jogo, Coach, Player)
+from .models import (UserDetails, Noticia, Product, Jogo, Coach, Player, Carrinho)
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -98,10 +99,28 @@ def criar_produto (request):
         preco = request.POST.get("preco")
         tipo = request.POST.get("tipo")
         imagem = request.FILES.get("imagem")
-        Product.objects.create(nome=nome,preco=preco, imagem=imagem ,tipo=tipo)
+        cod = request.POST.get("cod")
+        Product.objects.create(nome=nome,preco=preco, cod_produto=cod, imagem=imagem ,tipo=tipo)
         return redirect('loja')
     return render(request, 'clubehome/criar_produto.html')
 
+def adicionar_carrinho (request):
+    if request.method == 'POST' and request.user.is_authenticated:
+        product_id = request.POST.get('product_id')
+        product = Product.objects.get(pk=product_id)
+        cart, created = Carrinho.objects.get_or_create(user=request.user)
+        cart.products.add(product)
+        return JsonResponse({'sucesso':True})
+    else:
+        return JsonResponse({'sucesso': False,  'message': 'Entre na sua conta!'})
+
+def carrinho(request):
+    if request.user.is_authenticated:
+        cart, created = Carrinho.objects.get_or_create(user=request.user)
+        produtos_carrinho = cart.produtos.all()
+        return render(request, 'clubehome/carrinho.html', {'produtos_carrinho': produtos_carrinho})
+    else:
+        return redirect('login')
 def plantel(request):
     jogadores = Player.objects.all()
     treinadores = Coach.objects.all()

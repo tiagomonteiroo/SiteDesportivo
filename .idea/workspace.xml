@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="LOJA FINALIZADA">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0012_carrinho.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0013_product_cod_produto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/carrinho.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto1_zY9meIv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/carrinho.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/_6fc61d7b-4699-4af6-8e7c-6c9debb67b72.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/store.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/store.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/tornasocio.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/tornasocio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,16 +72,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jxbar/PycharmProjects/SiteDesportivo/siteclube/clubehome/static&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Loja",
+    "last_opened_file_path": "C:/Users/jxbar/PycharmProjects/SiteDesportivo/siteclube/clubehome/static"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jxbar\PycharmProjects\SiteDesportivo\siteclube\clubehome\static" />

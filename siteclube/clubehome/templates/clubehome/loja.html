@@ -42,12 +42,16 @@
         </div>
     </header>
 <br><main>
-         {% if user.is_authenticated and user.userdetails.is_admin %}
+         {% if user.is_authenticated %}
          <div class="linha">
-            <a href="{% url 'criar-produto' %}" class="creation">Criar Produto</a>
-            <a class="creation">Eliminar Produto</a>
+             {% if user.userdetails.is_admin %}
+             <a href="{% url 'criar-produto' %}" class="creation">Criar Produto</a>
+             <a class="creation">Eliminar Produto</a>
+             {% endif %}
+             <a href="{% url 'carrinho' %}" class="creation">Carrinho</a>
          </div>
          {% endif %}
+
 
          <div class="grelha">
             {% for product in produtos %}
@@ -59,12 +63,16 @@
                 <p>Preço: {{ product.preco }} €</p>
                 <p>Tipo: {{ product.tipo }}</p>
                 {% if user.UserDetails.is_admin and user.is_authenticated %}
-                <p>ID Produto: {{ product.id }}</p>
+                <p>ID Produto: {{ product.cod_produto }}</p>
+
                 {% endif %}
+<button onclick="adicionarAoCarrinho({{ product.cod_produto }})">Adicionar ao Carrinho</button>
             </div>
             {% endfor %}
         </div>
 </main>
+
+    <script src="{% static 'carrinho.js'%}"></script>
 
 </body>
 </html>

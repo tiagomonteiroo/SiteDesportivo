@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho | Site Oficial do Glu Glu Futebol Clube</title>
+    {% load static %}
+       <link rel="stylesheet" href="{% static 'store.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <div class="logo">
+                <a href="{% url 'homepage' %}">
+                    <img src="{% static 'logo.png' %}" alt="logotipo">
+                </a>
+            </div>
+            <nav>
+                <a href="{% url 'noticias' %}" class="box">Notícias</a>
+                    <a href="{% url 'plantel' %}" class="box">Plantel</a>
+                    <a href="{% url 'clube' %}" class="box">Clube</a>
+                    <a href="{% url 'socio' %}" class="box">Sócio</a>
+                    <a href="{% url 'loja' %}" class="box">Loja</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="box">Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="box">Conta</a>
+                    {% endif %}
+        </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Carrinho</h2>
+        {% if produtos_carrinho %}
+        <ul>
+            {% for item in produtos_carrinho %}
+            <li>
+                <h3>{{ item.nome }}</h3>
+                <p>Preço: {{item.preco}} €</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <a herf="{% url 'compra' %}">Concluir Compras</a>
+        {% else %}
+        <p> Carrinho Vazio</p>
+        {% endif %}
+    </main>
+</body>
+</html>
