@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="LOJA FINALIZADA">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0012_noticia_imagem_nome_alter_noticia_imagem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_05_2024,_11_52_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_05_2024_15_36_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_05_2024_15_36__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_05_2024__11_52__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/0d424600e802997bb5d5920c74e8567b.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/noticia3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/0d424600e802997bb5d5920c74e8567b_8AIPnHB.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/Fuck_you_Corona.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/OIG.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/Screenshot_2024-01-06_122925.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/download.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/noticia2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/download_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/style2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/styling.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/clube.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/clube.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
