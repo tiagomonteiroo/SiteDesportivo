@@ -142,7 +142,7 @@ def remover_do_carrinho(request, product_id):
         else:
             item_carrinho.delete()
     except Carrinho.DoesNotExist:
-        pass  # Handle the case when the cart doesn't exist
+        pass
 
     return redirect('carrinho')
 

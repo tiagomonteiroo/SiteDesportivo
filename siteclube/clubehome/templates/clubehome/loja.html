@@ -74,7 +74,9 @@
                 <p>Preço: {{ product.preco }} €</p>
                 <p>Tipo: {{ product.tipo }}</p>
                 <p>Codigo do Produto: {{ product.cod_produto }}</p>
+                {% if user.is_authenticated %}
                 <a href="{% url 'adicionarcarrinho' product.id %}" class="add">Adicionar ao Carrinho</a>
+                {% endif %}
             </div>
             {% endfor %}
         </div>

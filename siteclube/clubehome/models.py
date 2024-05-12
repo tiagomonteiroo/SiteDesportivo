@@ -87,3 +87,9 @@ class ItemCarrinho (models.Model):
 class Venda(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     produtos = models.ManyToManyField(Product)
+
+class Bilhete (Product):
+    equipa_fora=models.CharField(max_length=255)
+    equipa_casa=models.CharField(max_length=255)
+    data= models.DateField()
+
