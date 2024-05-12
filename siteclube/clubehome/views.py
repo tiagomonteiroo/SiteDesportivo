@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.http import JsonResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import (UserDetails, Noticia, Product, Jogo, Coach, Player, Carrinho, ItemCarrinho)
+from .models import (UserDetails, Noticia, Product, Jogo, Coach, Player, Carrinho, ItemCarrinho, Venda)
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -140,6 +140,24 @@ def carrinho(request):
         produtos_carrinho = cart.itemcarrinho_set.all()
 
         return render(request, 'clubehome/carrinho.html', {'produtos_carrinho': produtos_carrinho})
+
+def checkout(request):
+    user = request.user
+    try:
+        carrinho = Carrinho.objects.get(user=user)
+    except Carrinho.DoesNotExist:
+        return redirect('page_where_user_can_add_items')
+
+    venda = Venda.objects.create(usuario=user)
+
+    itens_carrinho = ItemCarrinho.objects.filter(carrinho=carrinho)
+    for item in itens_carrinho:
+        venda.produtos.add(item.product)
+
+    itens_carrinho.delete()
+
+    return render(request, 'clubehome/checkout.html', {'venda': venda})
+
 
 def plantel(request):
     jogadores = Player.objects.all()

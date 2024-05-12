@@ -10,11 +10,6 @@ class UserDetails(models.Model):
     is_socio = models.BooleanField(default=False)
     NIF = models.IntegerField(default=0)
 
-
-class Venda(models.Model):
-    utilizador = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
-    data = models.DateField(auto_now_add=True)
-
 class Noticia(models.Model):
     titulo = models.CharField(max_length=25)
     descricao = models.CharField(max_length=100)
@@ -76,3 +71,7 @@ class ItemCarrinho (models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     carrinho = models.ForeignKey(Carrinho, on_delete=models.CASCADE)
     quant = models.PositiveIntegerField(default=1)
+
+class Venda(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    produtos = models.ManyToManyField(Product)
