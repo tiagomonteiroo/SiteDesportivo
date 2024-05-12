@@ -33,11 +33,12 @@
     </header>
 
     <main>
-
-        {% if user.userdetails.is_admin and user.is_authenticated  %}
-            <a href="{% url 'criar_jogo' %}"><button>Criar Jogo</button></a>
-            <a href="{% url 'criar_noticia' %}"><button>Criar Notícia</button></a>
-        {% endif %}
+        <div class="linha">
+            {% if user.userdetails.is_admin and user.is_authenticated  %}
+                <a href="{% url 'criar_jogo' %}" class="creation">Criar Jogo</a>
+                <a href="{% url 'criar_noticia' %}" class="creation">Criar Notícia</a>
+            {% endif %}
+        </div>
 
         <img src="{% static 'GLU-EQUIPA.jpeg' %}" alt="EQUIPA" class="Foto-Equipa">
 

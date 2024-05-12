@@ -2,33 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Jogador</title>
+    <title>Criar Jogador | Site Oficial do Glu Glu Futebol Clube</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login2.css' %}"/>
 </head>
 <body>
-    <h1>Criar Novo Jogador</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" maxlength="50"><br><br>
+    <main>
+    <div class="centered">
+        <a href="{% url 'homepage' %}">
+        <img src="{% static 'logo.png' %}" alt="logotipo">
+        </a>
+        <h1>Criar Novo Jogador</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" maxlength="50"><br><br>
 
-        <label for="idade">Idade:</label><br>
-        <input type="number" id="idade" name="idade" min="18"><br><br>
+            <label for="idade">Idade:</label><br>
+            <input type="number" id="idade" name="idade" min="18"><br><br>
 
-        <label for="numero">Número:</label><br>
-        <input type="number" id="numero" name="numero" min="1" max="99"><br><br>
+            <label for="numero">Número:</label><br>
+            <input type="number" id="numero" name="numero" min="1" max="99"><br><br>
 
-        <label for="posicao">Posição:</label><br>
-        <select id="posicao" name="posicao">
-            <option value="Avançado">Avançado</option>
-            <option value="Extremo">Extremo</option>
-            <option value="Médio">Médio</option>
-            <option value="Central">Central</option>
-            <option value="Lateral">Lateral</option>
-            <option value="Guarda-Redes">Guarda-Redes</option>
-        </select><br><br>
+            <label for="posicao">Posição:</label><br>
+            <select id="posicao" name="posicao">
+                <option value="Avançado">Avançado</option>
+                <option value="Extremo">Extremo</option>
+                <option value="Médio">Médio</option>
+                <option value="Central">Central</option>
+                <option value="Lateral">Lateral</option>
+                <option value="Guarda-Redes">Guarda-Redes</option>
+            </select><br><br>
 
-        <input type="submit" value="Criar Jogador">
-    </form>
+            <input type="submit" value="Criar Jogador">
+        </form>
+        </div>
+    </main>
 </body>
 </html>

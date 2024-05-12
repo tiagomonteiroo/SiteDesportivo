@@ -2,32 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Jogo</title>
+    <title>Criar Jogo | Site Oficial do Glu Glu Futebol Clube</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login2.css' %}"/>
 </head>
 <body>
-    <h1>Criar Novo Jogo</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="adversario">Adversário:</label><br>
-        <input type="text" id="adversario" name="adversario" maxlength="50"><br><br>
+<main>
+    <div class="centered">
+        <a href="{% url 'homepage' %}">
+        <img src="{% static 'logo.png' %}" alt="logotipo">
+        </a>
+        <h1>Criar Novo Jogo</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="adversario">Adversário:</label><br>
+            <input type="text" id="adversario" name="adversario" maxlength="50"><br><br>
 
-        <label for="golos_clube">Golos do Clube:</label><br>
-        <input type="number" id="golos_clube" name="golos_clube" min="0"><br><br>
+            <label for="golos_clube">Golos do Clube:</label><br>
+            <input type="number" id="golos_clube" name="golos_clube" min="0"><br><br>
 
-        <label for="golos_adversario">Golos do Adversário:</label><br>
-        <input type="number" id="golos_adversario" name="golos_adversario" min="0"><br><br>
+            <label for="golos_adversario">Golos do Adversário:</label><br>
+            <input type="number" id="golos_adversario" name="golos_adversario" min="0"><br><br>
 
-        <label for="local">Local:</label><br>
-        <select id="local" name="local">
-            <option value="casa">Casa</option>
-            <option value="fora">Fora</option>
-        </select><br><br>
+            <label for="local">Local:</label><br>
+            <select id="local" name="local">
+                <option value="casa">Casa</option>
+                <option value="fora">Fora</option>
+            </select><br><br>
 
-        <label for="data_jogo">Data do Jogo:</label><br>
-        <input type="date" id="data_jogo" name="data_jogo" value="{% now 'Y-%m-%d' %}"><br><br>
+            <label for="data_jogo">Data do Jogo:</label><br>
+            <input type="date" id="data_jogo" name="data_jogo" value="{% now 'Y-%m-%d' %}"><br><br>
 
-        <input type="submit" value="Criar Jogo">
-    </form>
+            <input type="submit" value="Criar Jogo">
+        </form>
+    </div>
+</main>
 </body>
 </html>

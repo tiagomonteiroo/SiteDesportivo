@@ -2,29 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Treinador</title>
+    <title>Criar Treinador | Site Oficial do Glu Glu Futebol Clube</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login2.css' %}"/>
 </head>
 <body>
-    <h1>Criar Novo Treinador</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="name">Nome:</label><br>
-        <input type="text" id="name" name="nome" maxlength="100"><br><br>
+<main>
+    <div class="centered">
+        <a href="{% url 'homepage' %}">
+        <img src="{% static 'logo.png' %}" alt="logotipo">
+        </a>
+        <h1>Criar Novo Treinador</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="nome" maxlength="100"><br><br>
 
-        <label for="job">Cargo:</label><br>
-        <input type="text" id="job" name="cargo" maxlength="100"><br><br>
+            <label for="job">Cargo:</label><br>
+            <input type="text" id="job" name="cargo" maxlength="100"><br><br>
 
-        <label for="age">Idade:</label><br>
-        <input type="number" id="age" name="idade" min="18"><br><br>
+            <label for="age">Idade:</label><br>
+            <input type="number" id="age" name="idade" min="18"><br><br>
 
-        <label for="principal">Hierarquia:</label><br>
-        <select id="principal" name="principal">
-            <option value="true">Principal</option>
-            <option value="false">Não Principal</option>
-        </select><br><br>
+            <label for="principal">Hierarquia:</label><br>
+            <select id="principal" name="principal">
+                <option value="true">Principal</option>
+                <option value="false">Não Principal</option>
+            </select><br><br>
 
-        <input type="submit" value="Criar Treinador">
-    </form>
+            <input type="submit" value="Criar Treinador">
+        </form>
+    </div>
+</main>
 </body>
 </html>

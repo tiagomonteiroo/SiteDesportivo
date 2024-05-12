@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="TOMA LÁ UM DESTES pt2">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0002_noticia_imagem_nome.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/imagens/produto2_DNDJFGy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="VAI RIBENTAR">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/login2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/noticias.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0002_venda.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0003_remove_venda_carrinho_venda_produtos.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/plantel.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/plantel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_jogador.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_jogador.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_jogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_jogo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_noticia.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_noticia.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_treinador.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_treinador.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/plantel.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/plantel.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -479,7 +485,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715530713869</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="VAI RIBENTAR">
+      <option name="closed" value="true" />
+      <created>1715531567391</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1715531567391</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -495,7 +509,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Inicio da estretura da Homepage" />
     <MESSAGE value="Inserção do Logo" />
     <MESSAGE value="header homepage" />
     <MESSAGE value="Alterações Homepage" />
@@ -520,6 +533,7 @@
     <MESSAGE value="Checkout 100%" />
     <MESSAGE value="TOMA LÁ UM DESTES" />
     <MESSAGE value="TOMA LÁ UM DESTES pt2" />
-    <option name="LAST_COMMIT_MESSAGE" value="TOMA LÁ UM DESTES pt2" />
+    <MESSAGE value="VAI RIBENTAR" />
+    <option name="LAST_COMMIT_MESSAGE" value="VAI RIBENTAR" />
   </component>
 </project>

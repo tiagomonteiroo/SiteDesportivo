@@ -2,26 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Notícia</title>
+    <title>Criar Notícia | Site Oficial do Glu Glu Futebol Clube</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login2.css' %}"/>
 </head>
 <body>
-    <h1>Criar Nova Notícia</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label for="titulo">Título:</label><br>
-        <input type="text" id="titulo" name="titulo" maxlength="25"><br><br>
+<main>
+    <div class="centered">
+        <a href="{% url 'homepage' %}">
+        <img src="{% static 'logo.png' %}" alt="logotipo">
+        </a>
+        <h1>Criar Nova Notícia</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="titulo">Título:</label><br>
+            <input type="text" id="titulo" name="titulo" maxlength="25"><br><br>
 
-        <label for="descricao">Descrição:</label><br>
-        <textarea id="descricao" name="descricao" rows="4" maxlength="100"></textarea><br><br>
+            <label for="descricao">Descrição:</label><br>
+            <textarea id="descricao" name="descricao" rows="4" maxlength="100"></textarea><br><br>
 
-        <label for="imagem">Imagem:</label><br>
-        <input type="file" id="imagem" name="imagem"><br><br>
+            <label for="imagem">Imagem:</label><br>
+            <input type="file" id="imagem" name="imagem"><br><br>
 
-        <label for="data_publicacao">Data de Publicação:</label><br>
-        <input type="date" id="data_publicacao" name="data_publicacao" value="{% now 'Y-m-d' %}"><br><br>
+            <label for="data_publicacao">Data de Publicação:</label><br>
+            <input type="date" id="data_publicacao" name="data_publicacao" value="{% now 'Y-m-d' %}"><br><br>
 
-        <input type="submit" value="Criar Notícia">
-    </form>
+            <input type="submit" value="Criar Notícia">
+        </form>
+    </div>
+</main>
 </body>
 </html>

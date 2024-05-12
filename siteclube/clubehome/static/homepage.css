@@ -169,3 +169,20 @@ footer {
     font-size: 21px;
     border-radius: 15px;
 }
+
+.creation{
+    font-size: 15px;
+    color: #fff;
+    background-color: #ffc138;
+    text-decoration: none;
+    padding: 10px;
+    margin: 40px 0;
+}
+
+.creation:hover{
+    background-color: #e89d10;
+}
+
+.linha{
+    margin-left:10px;
+}
