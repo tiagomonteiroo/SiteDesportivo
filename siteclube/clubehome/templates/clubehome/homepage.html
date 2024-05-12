@@ -37,6 +37,7 @@
             {% if user.userdetails.is_admin and user.is_authenticated  %}
                 <a href="{% url 'criar_jogo' %}" class="creation">Criar Jogo</a>
                 <a href="{% url 'criar_noticia' %}" class="creation">Criar Notícia</a>
+                <a href="{% url 'eliminar_noticia' %}" class="creation">Eliminar Notícia</a>
             {% endif %}
         </div>
 
@@ -61,6 +62,7 @@
                     <div class="news-content">
                         <h2 class="news-title">{{ noticia.titulo }}</h2>
                         <p class="news-description">{{ noticia.descricao }}</p>
+                        <p>Codigo da Notícia: {{ noticia.id }}</p>
                     </div>
                 </div>
             {% endfor %}

@@ -93,3 +93,9 @@ class Bilhete (Product):
     equipa_casa=models.CharField(max_length=255)
     data= models.DateField()
 
+
+class Bilhete (Product):
+    equipa_fora=models.CharField(max_length=255)
+    equipa_casa=models.CharField(max_length=255)
+    data= models.DateField()
+

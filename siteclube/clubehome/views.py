@@ -115,6 +115,14 @@ def eliminar_produto(request):
         return redirect('loja')
     return render(request, 'clubehome/eliminar_produto.html')
 
+def eliminar_noticia(request):
+    if request.method == 'POST':
+        id_noticia = request.POST.get("cod")
+        noticia_to_delete = Noticia.objects.filter(id=id_noticia)
+        noticia_to_delete.delete()
+        return redirect('homepage')
+    return render(request, 'clubehome/eliminar_noticia.html')
+
 def adicionar_carrinho (request, product_id):
         try:
             product = Product.objects.get(pk=product_id)

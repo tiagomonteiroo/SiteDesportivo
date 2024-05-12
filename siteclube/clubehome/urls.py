@@ -15,6 +15,7 @@ urlpatterns = [
     path("criarnoticia/", views.criar_noticia, name="criar_noticia"),
     path("criarproduto/", views.criar_produto, name="criar-produto"),
     path("eliminarproduto/", views.eliminar_produto, name="eliminar-produto"),
+    path("eliminarnoticia/", views.eliminar_noticia, name="eliminar-noticia"),
     path("criarjogo/", views.criar_jogo, name="criar_jogo"),
     path("criarjogador/", views.criar_jogador, name="criar_jogador"),
     path("criartreinador/", views.criar_treinador, name="criar_treinador"),
