@@ -10,11 +10,6 @@ class UserDetails(models.Model):
     is_socio = models.BooleanField(default=False)
     NIF = models.IntegerField(default=0)
 
-
-class Venda(models.Model):
-    utilizador = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
-    data = models.DateField(auto_now_add=True)
-
 class Noticia(models.Model):
     titulo = models.CharField(max_length=25)
     descricao = models.CharField(max_length=100)
@@ -67,6 +62,7 @@ class Product(models.Model):
     imagem = models.ImageField(upload_to='clubehome/static/', null=True, blank=True)
     imagem_nome = models.CharField(max_length=255, null=True, blank=True)
     preco = models.IntegerField(default=0)
+    cod_produto = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.nome
@@ -78,3 +74,16 @@ class Product(models.Model):
             self.imagem.name = os.path.join('imagens', filename)
             self.imagem_nome = filename
         super().save(*args, **kwargs)
+
+class Carrinho(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    itens = models.ManyToManyField(Product, through="ItemCarrinho")
+
+class ItemCarrinho (models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    carrinho = models.ForeignKey(Carrinho, on_delete=models.CASCADE)
+    quant = models.PositiveIntegerField(default=1)
+
+class Venda(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    produtos = models.ManyToManyField(Product)

@@ -59,6 +59,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
 }
 
 .recent-games {
@@ -157,4 +158,14 @@ footer {
 .contact-box p {
     font-size: 16px;
     margin-bottom: 5px;
+}
+
+.box2 {
+    margin-left: 70px;
+    padding: 25px;
+    background-color: #263B5C;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 15px;
 }

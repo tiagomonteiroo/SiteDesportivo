@@ -13,10 +13,15 @@ urlpatterns = [
     path("registar/", views.criar_utilizador, name="registar"),
     path("criarnoticia/", views.criar_noticia, name="criar_noticia"),
     path("criarproduto/", views.criar_produto, name="criar-produto"),
+    path("eliminarproduto/", views.eliminar_produto, name="eliminar-produto"),
     path("criarjogo/", views.criar_jogo, name="criar_jogo"),
     path("criarjogador/", views.criar_jogador, name="criar_jogador"),
     path("criartreinador/", views.criar_treinador, name="criar_treinador"),
     path("logout/", views.logout, name="logout"),
     path("tornasocio/", views.torna_socio, name="tornasocio"),
-    path("deixasocio/", views.deixa_socio, name="deixasocio")
+    path("deixasocio/", views.deixa_socio, name="deixasocio"),
+    path("carrinho/", views.carrinho, name="carrinho"),
+    path("adicionarcarrinho/<int:product_id>/", views.adicionar_carrinho, name='adicionarcarrinho'),
+    path("removercarrinho/<int:product_id>/", views.remover_do_carrinho, name='removercarrinho'),
+    path("checkout/", views.checkout, name='checkout')
 ]
