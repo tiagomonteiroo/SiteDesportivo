@@ -7,7 +7,8 @@ from django.contrib.auth import logout as auth_logout
 # Create your views here.
 def homepage(request):
     ultimos_jogos = Jogo.objects.order_by('-data_jogo')[:4]
-    context = {'ultimos_jogos': ultimos_jogos}
+    ultimas_noticias = Noticia.objects.order_by('-data_publicacao')[:2]
+    context = {'ultimos_jogos': ultimos_jogos, 'ultimas_noticias': ultimas_noticias}
     return render(request, 'clubehome/homepage.html', context)
 
 def auth_login(request):

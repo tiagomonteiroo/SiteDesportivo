@@ -10,7 +10,7 @@ header {
     padding: 10px 0;
     height: 50 px;
     width: 100%;
-    }
+}
 
 .header-content {
     display: flex;
@@ -47,6 +47,11 @@ nav {
     background-color: #e89d10;
 }
 
+.Texto {
+    color: #fff;
+    margin-left: 60px;
+}
+
 .news-container {
     margin-top: 20px;
     display: flex;
@@ -76,6 +81,7 @@ nav {
     display: flex;
     flex-direction: column;
     flex: 1;
+    color: #fff;
 }
 
 .news-title {
@@ -85,6 +91,14 @@ nav {
 
 .news-description {
     margin-top: 10px;
+}
+
+.logout-box{
+    float: right;
+}
+
+.loginoff-box{
+    float: left;
 }
 
 footer {

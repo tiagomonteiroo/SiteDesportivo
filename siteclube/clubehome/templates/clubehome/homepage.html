@@ -36,7 +36,10 @@
 
         {% if user.userdetails.is_admin and user.is_authenticated  %}
             <a href="{% url 'criar_jogo' %}"><button>Criar Jogo</button></a>
+            <a href="{% url 'criar_noticia' %}"><button>Criar Notícia</button></a>
         {% endif %}
+
+        <img src="{% static 'GLU-EQUIPA.jpeg' %}" alt="EQUIPA" class="Foto-Equipa">
 
         <h1 class="Texto">Jogos Recentes:</h1>
         <div class="recent-games">
@@ -49,6 +52,18 @@
                 </div>
             {% endfor %}
         </div>
+
+        <h1 class="Texto">Últimas Notícias:</h1>
+        {% for noticia in ultimas_noticias %}
+                <div class="news">
+                    <img src="{% static 'noticias/' %}{{ noticia.imagem_nome }}" width="200">
+                    <div class="news-content">
+                        <h2 class="news-title">{{ noticia.titulo }}</h2>
+                        <p class="news-description">{{ noticia.descricao }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
     </main>
     <footer>
         <div class="contact-box">
