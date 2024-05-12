@@ -6,7 +6,9 @@ from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
 def homepage(request):
-    return render(request, 'clubehome/homepage.html')
+    ultimos_jogos = Jogo.objects.order_by('-data_jogo')[:4]
+    context = {'ultimos_jogos': ultimos_jogos}
+    return render(request, 'clubehome/homepage.html', context)
 
 def auth_login(request):
     if request.method == 'POST':
@@ -82,11 +84,11 @@ def criar_treinador(request):
         return redirect('plantel')
     return render(request, 'clubehome/criar_treinador.html')
 
-def ultimas_quatro(request):
-    ultimas_noticias = Noticia.objects.order_by('-data_publicacao')[:4]
-    ultimos_jogos = Jogo.objects.order_by('-data_jogo')[:4]
-    context = {'ultimos_jogos': ultimos_jogos, 'ultimas_noticias': ultimas_noticias}
+def ultimas_noticias(request):
+    ultimas_noticias = Noticia.objects.order_by('-data_publicacao')[:6]
+    context = {'ultimas_noticias': ultimas_noticias}
     return render(request, 'clubehome/noticias.html', context)
+
 def loja(request):
     produtos = Product.objects.all()
     context = {'produtos' : produtos}

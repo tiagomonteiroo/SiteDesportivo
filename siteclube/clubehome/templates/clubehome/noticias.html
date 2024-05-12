@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOTÍCIAS | Site Oficial do Glu Glu Futebol Clube</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'noticias.css' %}"/>
 </head>
 <body>
     <header>
@@ -46,18 +46,6 @@
                     </div>
                 </div>
             {% endfor %}
-
-
-            <div class="recent-games">
-                {% for jogo in ultimos_jogos %}
-                    <div class="game">
-                        <h2 class="game-info">Contra: {{ jogo.adversario }}</h2>
-                        <p class="game-info">Resultado: {{ jogo.golos_clube }} x {{ jogo.golos_adversario }}</p>
-                        <p class="game-info">Local: {{ jogo.local }}</p>
-                        <p class="game-info">Data: {{ jogo.data_jogo }}</p>
-                    </div>
-                {% endfor %}
-            </div>
     </main>
     <footer>
         <div class="contact-box">
