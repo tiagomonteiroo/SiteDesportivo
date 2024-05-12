@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho | Site Oficial do Glu Glu Futebol Clube</title>
+    {% load static %}
+       <link rel="stylesheet" href="{% static 'store.css' %}">
+    <style>
+        .add{
+    font-size: 15px;
+    color: #fff;
+    background-color: #ffc138;
+    text-decoration: none;
+    padding: 10px;
+    margin: 20px;
+    }
+    .add:hover{
+    background-color: #e89d10;
+}
+        main {
+    margin: 20px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 24px;
+    color: #fff;
+    margin: 10px;
+}
+
+/* Estilos dos itens do carrinho */
+.cart {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin: 20px;
+    color:
+}
+
+.cart img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.itens {
+    flex-grow: 1;
+}
+
+.cart h3 {
+    font-size: 18px;
+    color: #fff;
+    margin: 5px;
+}
+
+.cart p {
+    font-size: 14px;
+    color: #fff;
+    margin: 20px;
+}
+
+.cart a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.cart a:hover {
+    text-decoration: none;
+}
+.border{
+background-color:#263B5C;
+border: 5px solid #ffc138;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-logo">
+            <div class="logo">
+                <a href="{% url 'homepage' %}">
+                    <img src="{% static 'logo.png' %}" alt="logotipo">
+                </a>
+            </div>
+            <nav>
+                <a href="{% url 'noticias' %}" class="box">Notícias</a>
+                    <a href="{% url 'plantel' %}" class="box">Plantel</a>
+                    <a href="{% url 'clube' %}" class="box">Clube</a>
+                    <a href="{% url 'socio' %}" class="box">Sócio</a>
+                    <a href="{% url 'loja' %}" class="box">Loja</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="box">Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="box">Conta</a>
+                    {% endif %}
+        </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="border">
+        <h2>Carrinho</h2>
+        {% if produtos_carrinho %}
+            {% for item in produtos_carrinho %}
+            <div class="cart">
+                <img src="{% static 'imagens/' %}{{ item.product.imagem_nome }}" width="100">
+                <div class="itens">
+                <h3>{{ item.product.nome }}</h3>
+                <p>Preço: {{item.product.preco}} €</p>
+                <p>Quantidade: {{ item.quant }}</p>
+                <a href="{% url 'removercarrinho' item.product.id %}" class="add">Remover</a>
+                </div>
+            </div><br>
+            {% endfor %}
+            <br><br><a href="{% url 'checkout' %}" class="check">Concluir Compras</a>
+        {% else %}
+        <p> Carrinho Vazio</p>
+        {% endif %}
+        </div>
+    </main>
+</body>
+</html>

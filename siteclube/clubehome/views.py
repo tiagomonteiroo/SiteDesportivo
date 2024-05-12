@@ -1,7 +1,8 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
-from .models import (UserDetails, Noticia, Product, Jogo, Coach, Player)
+from django.http import JsonResponse, HttpResponseNotFound
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import (UserDetails, Noticia, Product, Jogo, Coach, Player, Carrinho, ItemCarrinho, Venda)
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -101,9 +102,73 @@ def criar_produto (request):
         preco = request.POST.get("preco")
         tipo = request.POST.get("tipo")
         imagem = request.FILES.get("imagem")
-        Product.objects.create(nome=nome,preco=preco, imagem=imagem ,tipo=tipo)
+        cod = request.POST.get("cod")
+        Product.objects.create(nome=nome,preco=preco, cod_produto=cod, imagem=imagem ,tipo=tipo)
         return redirect('loja')
     return render(request, 'clubehome/criar_produto.html')
+
+def eliminar_produto(request):
+    if request.method == 'POST':
+        id_produto = request.POST.get("cod")
+        product_to_delete = Product.objects.filter(cod_produto=id_produto)
+        product_to_delete.delete()
+        return redirect('loja')
+    return render(request, 'clubehome/eliminar_produto.html')
+
+def adicionar_carrinho (request, product_id):
+        try:
+            product = Product.objects.get(pk=product_id)
+        except Product.DoesNotExist:
+            return HttpResponseNotFound("Produto não foi encontrado!")
+        cart, created = Carrinho.objects.get_or_create(user=request.user)
+        item_carrinho, created = ItemCarrinho.objects.get_or_create(product= product, carrinho=cart)
+        if not created:
+            item_carrinho.quant +=1
+            item_carrinho.save()
+        return redirect('carrinho')
+
+def remover_do_carrinho(request, product_id):
+    try:
+        product = Product.objects.get(pk=product_id)
+    except Product.DoesNotExist:
+        return HttpResponseNotFound("Produto não foi encontrado!")
+
+    try:
+        cart = Carrinho.objects.get(user=request.user)
+        item_carrinho = ItemCarrinho.objects.get(product=product, carrinho=cart)
+        if item_carrinho.quant > 1:
+            item_carrinho.quant -= 1
+            item_carrinho.save()
+        else:
+            item_carrinho.delete()
+    except Carrinho.DoesNotExist:
+        pass  # Handle the case when the cart doesn't exist
+
+    return redirect('carrinho')
+
+def carrinho(request):
+        cart, created = Carrinho.objects.get_or_create(user=request.user)
+        produtos_carrinho = cart.itemcarrinho_set.all()
+
+        return render(request, 'clubehome/carrinho.html', {'produtos_carrinho': produtos_carrinho})
+
+def checkout(request):
+    user = request.user
+    try:
+        carrinho = Carrinho.objects.get(user=user)
+    except Carrinho.DoesNotExist:
+        return redirect('page_where_user_can_add_items')
+
+    venda = Venda.objects.create(usuario=user)
+
+    itens_carrinho = ItemCarrinho.objects.filter(carrinho=carrinho)
+    for item in itens_carrinho:
+        venda.produtos.add(item.product)
+
+    itens_carrinho.delete()
+
+    return render(request, 'clubehome/checkout.html', {'venda': venda})
+
 
 def plantel(request):
     jogadores = Player.objects.all()

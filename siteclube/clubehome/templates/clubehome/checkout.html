@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CheckOut | Site Oficial do Glu Glu Futebol Clube</title>
+    {% load static %}
+    <style>
+        .centered{
+        text-align: center;
+        }
+        body {
+            font-family: sans-serif, Arial;
+            background-color: #121f27;
+        }
+
+        div {
+            background-color: #303e49;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 80px;
+            border-radius: 15px;
+            color: #fff;
+        }
+        img{
+        max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="centered">
+        <a href="{% url 'homepage' %}">
+        <img src="{% static 'logo.png' %}" alt="logotipo">
+        </a>
+
+    <h2>CHECKOUT</h2>
+    <p>Obrigado pelas suas compras!</p>
+    <h2>Detalhes da Compra:</h2>
+    <p><strong>Usuário:</strong> {{ venda.usuario.username }}</p>
+    <p><strong>Produtos:</strong></p>
+    <ul>
+        {% for produto in venda.produtos.all %}
+        <li>{{ produto.nome }} - {{ produto.preco }} €</li>
+        {% endfor %}
+    </ul>
+    </div>
+</body>
+</html>

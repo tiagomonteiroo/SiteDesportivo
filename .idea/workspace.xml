@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="HOMEPAGE TESTE">
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Checkout 100%">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/eliminar_produto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/store.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/store.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/carrinho.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/carrinho.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +72,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Loja&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/jxbar/PycharmProjects/SiteDesportivo/siteclube/clubehome/static&quot;
   }
 }</component>
@@ -107,7 +115,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
       </set>
     </attachedChunks>
   </component>
@@ -432,47 +440,31 @@
       <option name="project" value="LOCAL" />
       <updated>1715442297359</updated>
     </task>
-    <task id="LOCAL-00040" summary="ARRANJEI O HEADER EM TODAS">
+    <task id="LOCAL-00040" summary="Tentativa 1 Carrinho">
       <option name="closed" value="true" />
-      <created>1715504700010</created>
+      <created>1715470565871</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1715504700010</updated>
+      <updated>1715470565871</updated>
     </task>
-    <task id="LOCAL-00041" summary="CSS'S ARRANJADOS">
+    <task id="LOCAL-00041" summary="Carrinho 100%">
       <option name="closed" value="true" />
-      <created>1715511970593</created>
+      <created>1715522947752</created>
       <option name="number" value="00041" />
       <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1715511970593</updated>
+      <updated>1715522947752</updated>
     </task>
-    <task id="LOCAL-00042" summary="ACHO Q O SOCIO TA ARRANJADO">
+    <task id="LOCAL-00042" summary="Checkout 100%">
       <option name="closed" value="true" />
-      <created>1715512256373</created>
+      <created>1715526391107</created>
       <option name="number" value="00042" />
       <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1715512256373</updated>
+      <updated>1715526391107</updated>
     </task>
-    <task id="LOCAL-00043" summary="ACHO Q O SOCIO TA ARRANJADO">
-      <option name="closed" value="true" />
-      <created>1715523290630</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1715523290630</updated>
-    </task>
-    <task id="LOCAL-00044" summary="HOMEPAGE TESTE">
-      <option name="closed" value="true" />
-      <created>1715525668577</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1715525668577</updated>
-    </task>
-    <option name="localTasksCounter" value="45" />
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -488,6 +480,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Inserir os botoes de ligação as outras páginas (Loja e Plantel)" />
     <MESSAGE value="ajustes no urls" />
     <MESSAGE value="Inicio da estretura da Homepage" />
     <MESSAGE value="Inserção do Logo" />
@@ -509,10 +502,9 @@
     <MESSAGE value="LOJA + PRODUTOS NOVAMENTE (C/IMAGENS)" />
     <MESSAGE value="LOJA + PRODUTOS NOVAMENTE (C/IMAGENS GUARDADAS)" />
     <MESSAGE value="LOJA FINALIZADA" />
-    <MESSAGE value="ARRANJEI O HEADER EM TODAS" />
-    <MESSAGE value="CSS'S ARRANJADOS" />
-    <MESSAGE value="ACHO Q O SOCIO TA ARRANJADO" />
-    <MESSAGE value="HOMEPAGE TESTE" />
-    <option name="LAST_COMMIT_MESSAGE" value="HOMEPAGE TESTE" />
+    <MESSAGE value="Tentativa 1 Carrinho" />
+    <MESSAGE value="Carrinho 100%" />
+    <MESSAGE value="Checkout 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkout 100%" />
   </component>
 </project>
