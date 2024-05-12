@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="ACHO Q O SOCIO TA ARRANJADO">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/GLU-EQUIPA.jpeg" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="HOMEPAGE TESTE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/noticias2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -469,7 +464,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715523290630</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="HOMEPAGE TESTE">
+      <option name="closed" value="true" />
+      <created>1715525668577</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1715525668577</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -485,7 +488,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Inserir os botoes de ligação as outras páginas (Loja e Plantel)" />
     <MESSAGE value="ajustes no urls" />
     <MESSAGE value="Inicio da estretura da Homepage" />
     <MESSAGE value="Inserção do Logo" />
@@ -510,6 +512,7 @@
     <MESSAGE value="ARRANJEI O HEADER EM TODAS" />
     <MESSAGE value="CSS'S ARRANJADOS" />
     <MESSAGE value="ACHO Q O SOCIO TA ARRANJADO" />
-    <option name="LAST_COMMIT_MESSAGE" value="ACHO Q O SOCIO TA ARRANJADO" />
+    <MESSAGE value="HOMEPAGE TESTE" />
+    <option name="LAST_COMMIT_MESSAGE" value="HOMEPAGE TESTE" />
   </component>
 </project>
