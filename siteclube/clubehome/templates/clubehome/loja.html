@@ -18,6 +18,16 @@
 .creation:hover{
     background-color: #e89d10;
 }
+    .add{
+    font-size: 15px;
+    color: #fff;
+    background-color: #ffc138;
+    text-decoration: none;
+    padding: 10px;
+    }
+    .add:hover{
+    background-color: #e89d10;
+}
 </style>
 <body>
      <header>
@@ -46,7 +56,7 @@
          <div class="linha">
              {% if user.userdetails.is_admin %}
              <a href="{% url 'criar-produto' %}" class="creation">Criar Produto</a>
-             <a class="creation">Eliminar Produto</a>
+             <a href="{% url 'eliminar-produto' %}" class="creation">Eliminar Produto</a>
              {% endif %}
              <a href="{% url 'carrinho' %}" class="creation">Carrinho</a>
          </div>
@@ -62,7 +72,8 @@
                 <h2>{{ product.nome }}</h2>
                 <p>Preço: {{ product.preco }} €</p>
                 <p>Tipo: {{ product.tipo }}</p>
-                <a href="{% url 'adicionarcarrinho' product.id %}" class="btn btn-primmary">Adicionar ao Carrinho</a>
+                <p>Codigo do Produto: {{ product.cod_produto }}</p>
+                <a href="{% url 'adicionarcarrinho' product.id %}" class="add">Adicionar ao Carrinho</a>
             </div>
             {% endfor %}
         </div>

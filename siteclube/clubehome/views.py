@@ -104,6 +104,14 @@ def criar_produto (request):
         return redirect('loja')
     return render(request, 'clubehome/criar_produto.html')
 
+def eliminar_produto(request):
+    if request.method == 'POST':
+        id_produto = request.POST.get("cod")
+        product_to_delete = Product.objects.filter(cod_produto=id_produto)
+        product_to_delete.delete()
+        return redirect('loja')
+    return render(request, 'clubehome/eliminar_produto.html')
+
 def adicionar_carrinho (request, product_id):
         try:
             product = Product.objects.get(pk=product_id)

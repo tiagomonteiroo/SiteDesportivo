@@ -4,26 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Carrinho 100%">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0003_remove_venda_carrinho_venda_produtos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/checkout.html" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Checkout 100%">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/eliminar_produto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0002_coach_player.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0003_delete_jogador.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0004_produto_imagem.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0005_alter_produto_imagem.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0006_rename_imagem_produto_imag.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0007_remove_venda_produto_delete_bilhete_delete_produto.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0008_product.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0009_alter_product_imagem.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0010_alter_product_imagem.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0011_product_imagem_nome_alter_product_imagem.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0012_carrinho.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/migrations/0002_venda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0013_product_cod_produto.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/migrations/0014_remove_carrinho_produtos_itemcarrinho_carrinho_itens.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/store.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/store.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/carrinho.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/carrinho.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
@@ -468,7 +456,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715522947752</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Checkout 100%">
+      <option name="closed" value="true" />
+      <created>1715526391107</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1715526391107</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -484,7 +480,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Ficheiro BD" />
     <MESSAGE value="Inserir os botoes de ligação as outras páginas (Loja e Plantel)" />
     <MESSAGE value="ajustes no urls" />
     <MESSAGE value="Inicio da estretura da Homepage" />
@@ -509,6 +504,7 @@
     <MESSAGE value="LOJA FINALIZADA" />
     <MESSAGE value="Tentativa 1 Carrinho" />
     <MESSAGE value="Carrinho 100%" />
-    <option name="LAST_COMMIT_MESSAGE" value="Carrinho 100%" />
+    <MESSAGE value="Checkout 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkout 100%" />
   </component>
 </project>
