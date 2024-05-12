@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.http import JsonResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import (UserDetails, Noticia, Product, Jogo, Coach, Player, Carrinho, ItemCarrinho, Venda)
+from .models import (UserDetails, Noticia, Product, Jogo, Coach, Player, Carrinho, ItemCarrinho, Venda, Bilhete)
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -142,7 +142,7 @@ def remover_do_carrinho(request, product_id):
         else:
             item_carrinho.delete()
     except Carrinho.DoesNotExist:
-        pass  # Handle the case when the cart doesn't exist
+        pass
 
     return redirect('carrinho')
 
@@ -177,7 +177,29 @@ def plantel(request):
     return render(request, 'clubehome/plantel.html', {'posicoes': posicoes, 'jogadores': jogadores, 'treinadores': treinadores})
 
 def bilhetes(request):
-    return render(request, "clubehome/bilhetes.html")
+    bilhetes = Bilhete.objects.all()
+    return render(request, "clubehome/bilhetes.html", {'bilhetes' : bilhetes})
+
+
+def criar_bilhete(request):
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        tipo = request.POST.get('tipo')
+        preco = request.POST.get('preco')
+        cod = request.POST.get('cod')
+        equipa_fora = request.POST.get('equipa_fora')
+        equipa_casa = request.POST.get('equipa_casa')
+        data = request.POST.get('data')
+
+        Bilhete.objects.create(nome=nome, tipo=tipo, preco=preco,cod_produto=cod ,equipa_casa=equipa_casa, equipa_fora=equipa_fora,
+                               data=data)
+
+        return redirect('bilhetes')
+    else:
+        return render(request, 'clubehome/criar_bilhete.html')
+
+
+
 
 def noticias(request):
     return render(request, "clubehome/noticias.html")

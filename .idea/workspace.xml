@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="VAI RIBENTAR">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/login2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/noticias.css" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Bilhete 100%">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/bilhetes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/loja_final.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/checkout.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/noticias2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/plantel.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/plantel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_jogador.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_jogador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_jogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_jogo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_noticia.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_noticia.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_produto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_treinador.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/criar_treinador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/plantel.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/plantel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/socio.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/socio.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/bilhetes.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/bilhetes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,16 +65,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jxbar/PycharmProjects/SiteDesportivo/siteclube/clubehome/static&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Bilhete",
+    "last_opened_file_path": "C:/Users/jxbar/PycharmProjects/SiteDesportivo/siteclube/clubehome/static"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jxbar\PycharmProjects\SiteDesportivo\siteclube\clubehome\static" />
@@ -477,21 +471,21 @@
       <option name="project" value="LOCAL" />
       <updated>1715530648157</updated>
     </task>
-    <task id="LOCAL-00044" summary="TOMA LÁ UM DESTES pt2">
+    <task id="LOCAL-00044" summary="Bilhete">
       <option name="closed" value="true" />
-      <created>1715530713869</created>
+      <created>1715532642789</created>
       <option name="number" value="00044" />
       <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
-      <updated>1715530713869</updated>
+      <updated>1715532642789</updated>
     </task>
-    <task id="LOCAL-00045" summary="VAI RIBENTAR">
+    <task id="LOCAL-00045" summary="Bilhete 100%">
       <option name="closed" value="true" />
-      <created>1715531567391</created>
+      <created>1715535384839</created>
       <option name="number" value="00045" />
       <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1715531567391</updated>
+      <updated>1715535384839</updated>
     </task>
     <option name="localTasksCounter" value="46" />
     <servers />
@@ -532,8 +526,8 @@
     <MESSAGE value="Carrinho 100%" />
     <MESSAGE value="Checkout 100%" />
     <MESSAGE value="TOMA LÁ UM DESTES" />
-    <MESSAGE value="TOMA LÁ UM DESTES pt2" />
-    <MESSAGE value="VAI RIBENTAR" />
-    <option name="LAST_COMMIT_MESSAGE" value="VAI RIBENTAR" />
+    <MESSAGE value="Bilhete" />
+    <MESSAGE value="Bilhete 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bilhete 100%" />
   </component>
 </project>

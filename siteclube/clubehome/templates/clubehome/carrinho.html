@@ -109,7 +109,12 @@ border: 5px solid #ffc138;
             <div class="cart">
                 <img src="{% static 'imagens/' %}{{ item.product.imagem_nome }}" width="100">
                 <div class="itens">
+                    {% if item.product.tipo != 'Bilhete' %}
                 <h3>{{ item.product.nome }}</h3>
+                {% else %}
+                <h2>{{ item.product.bilhete.equipa_casa }} x {{ item.product.bilhete.equipa_fora }}</h2>
+                <p>{{ item.product.bilhete.data }}</p>
+                {% endif %}
                 <p>Preço: {{item.product.preco}} €</p>
                 <p>Quantidade: {{ item.quant }}</p>
                 <a href="{% url 'removercarrinho' item.product.id %}" class="add">Remover</a>

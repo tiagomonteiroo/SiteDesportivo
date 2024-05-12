@@ -1,0 +1,103 @@
+.creation{
+    font-size: 15px;
+    color: #fff;
+    background-color: #ffc138;
+    text-decoration: none;
+    padding: 10px;
+    margin: 40px 0;
+}
+.creation:hover{
+    background-color: #e89d10;
+}
+.add{
+    font-size: 15px;
+    color: #fff;
+    background-color: #ffc138;
+    text-decoration: none;
+    padding: 10px;
+    }
+    .add:hover{
+    background-color: #e89d10;
+}
+.grelha {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+
+.grelha-item {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            color: #fff
+        }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: #121f27;
+}
+
+header {
+    background-color: #121f27;
+    padding: 10px 0;
+    height: 50 px;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.logo {
+    float: left;
+}
+
+nav {
+    display: flex;
+    vertical-align: middle;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+.box {
+    padding: 25px;
+    background-color: #ffc138;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 40px 0;
+}
+
+.box:hover {
+    background-color: #e89d10;
+}
+.creation{
+    font-size: 15px;
+    color: #fff;
+    background-color: #ffc138;
+    text-decoration: none;
+    padding: 10px;
+    margin: 40px 0;
+}
+.creation:hover{
+    background-color: #e89d10;
+}
+    .add{
+    font-size: 15px;
+    color: #fff;
+    background-color: #ffc138;
+    text-decoration: none;
+    padding: 10px;
+    }
+    .add:hover{
+    background-color: #e89d10;
+}
