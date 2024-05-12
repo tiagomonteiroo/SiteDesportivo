@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="ARRANJEI O HEADER EM TODAS">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/clube.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/homepage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/noticias.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/plantel.css" afterDir="false" />
+    <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="CSS'S ARRANJADOS">
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/socio.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/glu-glu-equipa.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/glu-glu-treinador.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/clube.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/clube.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/noticias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/plantel.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/plantel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -451,7 +441,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715504700010</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="CSS'S ARRANJADOS">
+      <option name="closed" value="true" />
+      <created>1715511970593</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1715511970593</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -467,7 +465,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Alterações Necessárias( Possoveç Visualização da HomePage)" />
     <MESSAGE value="Ficheiro BD" />
     <MESSAGE value="Inserir os botoes de ligação as outras páginas (Loja e Plantel)" />
     <MESSAGE value="ajustes no urls" />
@@ -492,6 +489,7 @@
     <MESSAGE value="LOJA + PRODUTOS NOVAMENTE (C/IMAGENS GUARDADAS)" />
     <MESSAGE value="LOJA FINALIZADA" />
     <MESSAGE value="ARRANJEI O HEADER EM TODAS" />
-    <option name="LAST_COMMIT_MESSAGE" value="ARRANJEI O HEADER EM TODAS" />
+    <MESSAGE value="CSS'S ARRANJADOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS'S ARRANJADOS" />
   </component>
 </project>
