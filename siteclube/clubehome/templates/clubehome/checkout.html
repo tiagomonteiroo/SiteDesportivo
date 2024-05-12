@@ -41,7 +41,11 @@
     <p><strong>Produtos:</strong></p>
     <ul>
         {% for produto in venda.produtos.all %}
+        {% if produto.tipo != 'Bilhete' %}
         <li>{{ produto.nome }} - {{ produto.preco }} €</li>
+        {% else %}
+        <li>{{ produto.bilhete.equipa_casa }} x {{ produto.bilhete.equipa_fora }} - {{ produto.preco }} €</li>
+        {% endif %}
         {% endfor %}
     </ul>
     </div>

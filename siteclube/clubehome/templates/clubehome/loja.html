@@ -70,10 +70,18 @@
                 {% if product.imagem_nome %}
                 <img src="{% static 'imagens/' %}{{ product.imagem_nome }}" width="200">
                 {% endif %}
+                {% if product.tipo != 'Bilhete' %}
                 <h2>{{ product.nome }}</h2>
+                {% else %}
+                <h2>{{ product.bilhete.equipa_casa }} x {{ product.bilhete.equipa_fora }}</h2>
+                <p>{{ product.bilhete.data }}</p>
+                {% endif %}
+
                 <p>Preço: {{ product.preco }} €</p>
                 <p>Tipo: {{ product.tipo }}</p>
+                {% if user.is_authenticated and user.userdetais.is_admin %}
                 <p>Codigo do Produto: {{ product.cod_produto }}</p>
+                {% endif %}
                 {% if user.is_authenticated %}
                 <a href="{% url 'adicionarcarrinho' product.id %}" class="add">Adicionar ao Carrinho</a>
                 {% endif %}
