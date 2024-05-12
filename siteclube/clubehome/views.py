@@ -1,8 +1,8 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from django.http import JsonResponse
-from django.shortcuts import render, redirect
-from .models import (UserDetails, Noticia, Product, Jogo, Coach, Player, Carrinho)
+from django.http import JsonResponse, HttpResponseNotFound
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import (UserDetails, Noticia, Product, Jogo, Coach, Player, Carrinho, ItemCarrinho)
 from django.contrib.auth import logout as auth_logout
 
 # Create your views here.
@@ -104,23 +104,43 @@ def criar_produto (request):
         return redirect('loja')
     return render(request, 'clubehome/criar_produto.html')
 
-def adicionar_carrinho (request):
-    if request.method == 'POST' and request.user.is_authenticated:
-        product_id = request.POST.get('product_id')
-        product = Product.objects.get(pk=product_id)
+def adicionar_carrinho (request, product_id):
+        try:
+            product = Product.objects.get(pk=product_id)
+        except Product.DoesNotExist:
+            return HttpResponseNotFound("Produto não foi encontrado!")
         cart, created = Carrinho.objects.get_or_create(user=request.user)
-        cart.products.add(product)
-        return JsonResponse({'sucesso':True})
-    else:
-        return JsonResponse({'sucesso': False,  'message': 'Entre na sua conta!'})
+        item_carrinho, created = ItemCarrinho.objects.get_or_create(product= product, carrinho=cart)
+        if not created:
+            item_carrinho.quant +=1
+            item_carrinho.save()
+        return redirect('carrinho')
+
+def remover_do_carrinho(request, product_id):
+    try:
+        product = Product.objects.get(pk=product_id)
+    except Product.DoesNotExist:
+        return HttpResponseNotFound("Produto não foi encontrado!")
+
+    try:
+        cart = Carrinho.objects.get(user=request.user)
+        item_carrinho = ItemCarrinho.objects.get(product=product, carrinho=cart)
+        if item_carrinho.quant > 1:
+            item_carrinho.quant -= 1
+            item_carrinho.save()
+        else:
+            item_carrinho.delete()
+    except Carrinho.DoesNotExist:
+        pass  # Handle the case when the cart doesn't exist
+
+    return redirect('carrinho')
 
 def carrinho(request):
-    if request.user.is_authenticated:
         cart, created = Carrinho.objects.get_or_create(user=request.user)
-        produtos_carrinho = cart.produtos.all()
+        produtos_carrinho = cart.itemcarrinho_set.all()
+
         return render(request, 'clubehome/carrinho.html', {'produtos_carrinho': produtos_carrinho})
-    else:
-        return redirect('login')
+
 def plantel(request):
     jogadores = Player.objects.all()
     treinadores = Coach.objects.all()

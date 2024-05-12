@@ -70,7 +70,9 @@ class Product(models.Model):
 
 class Carrinho(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    produtos = models.ManyToManyField('Product')
+    itens = models.ManyToManyField(Product, through="ItemCarrinho")
 
-    def __str__(self):
-        return f'Carrinho para {self.user.username}'
+class ItemCarrinho (models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    carrinho = models.ForeignKey(Carrinho, on_delete=models.CASCADE)
+    quant = models.PositiveIntegerField(default=1)

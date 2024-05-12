@@ -32,18 +32,19 @@
     <main>
         <h2>Carrinho</h2>
         {% if produtos_carrinho %}
-        <ul>
             {% for item in produtos_carrinho %}
-            <li>
-                <h3>{{ item.nome }}</h3>
-                <p>Preço: {{item.preco}} €</p>
-            </li>
+            <div>
+                <img src="{% static 'imagens/' %}{{ item.product.imagem_nome }}" width="100">
+                <h3>{{ item.product.nome }}</h3>
+                <p>Preço: {{item.product.preco}} €</p>
+                <p>Quantidade: {{ item.quant }}</p>
+                <a href="{% url 'removercarrinho' item.product.id %}" class="btn btn-danger">Remove</a>
+            </div>
             {% endfor %}
-        </ul>
-        <a herf="{% url 'compra' %}">Concluir Compras</a>
         {% else %}
         <p> Carrinho Vazio</p>
         {% endif %}
+
     </main>
 </body>
 </html>

@@ -62,17 +62,12 @@
                 <h2>{{ product.nome }}</h2>
                 <p>Preço: {{ product.preco }} €</p>
                 <p>Tipo: {{ product.tipo }}</p>
-                {% if user.UserDetails.is_admin and user.is_authenticated %}
-                <p>ID Produto: {{ product.cod_produto }}</p>
-
-                {% endif %}
-<button onclick="adicionarAoCarrinho({{ product.cod_produto }})">Adicionar ao Carrinho</button>
+                <a href="{% url 'adicionarcarrinho' product.id %}" class="btn btn-primmary">Adicionar ao Carrinho</a>
             </div>
             {% endfor %}
         </div>
 </main>
 
-    <script src="{% static 'carrinho.js'%}"></script>
 
 </body>
 </html>
