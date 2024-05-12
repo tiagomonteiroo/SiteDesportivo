@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d030d01-4588-4c22-97aa-2dcc1252e1aa" name="Changes" comment="Bilhete 100%">
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/bilhetes.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/loja_final.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/noticias/checkout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/siteclube/clubehome/static/carrinho.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/static/socio.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/static/socio.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/bilhetes.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/bilhetes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/loja.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/socio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/carrinho.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/clubehome/templates/clubehome/carrinho.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteclube/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteclube/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Bilhete" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +66,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Bilhete",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/jxbar/PycharmProjects/SiteDesportivo/siteclube/clubehome/static"
   }
 }]]></component>
@@ -80,8 +75,8 @@
       <recent name="C:\Users\jxbar\PycharmProjects\SiteDesportivo\siteclube\clubehome\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jxbar\PycharmProjects\SiteDesportivo\siteclube\clubehome\static" />
       <recent name="$PROJECT_DIR$/siteclube/clubehome/static" />
+      <recent name="C:\Users\jxbar\PycharmProjects\SiteDesportivo\siteclube\clubehome\static" />
       <recent name="$PROJECT_DIR$/siteclube/clubehome/static/login" />
       <recent name="$PROJECT_DIR$/siteclube/clubehome" />
       <recent name="$PROJECT_DIR$/siteclube/clubehome/templates/CSS" />
