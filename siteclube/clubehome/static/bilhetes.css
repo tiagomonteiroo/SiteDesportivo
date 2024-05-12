@@ -1,22 +1,8 @@
-.grelha {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            grid-gap: 10px;
-            padding: 10px;
-        }
-
-.grelha-item {
-            border: 1px solid #ccc;
-            padding: 20px;
-            text-align: center;
-            color: #fff
-        }
-        body {
+body {
     font-family: Arial, sans-serif;
     margin: 0px;
     padding: 0px;
     background-color: #121f27;
-
 }
 
 header {
@@ -24,7 +10,7 @@ header {
     padding: 10px 0;
     height: 50 px;
     width: 100%;
-    }
+}
 
 .header-content {
     display: flex;
@@ -59,4 +45,38 @@ nav {
 
 .box:hover {
     background-color: #e89d10;
+}
+
+h1{
+color: #fff;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+grid-gap: 20px;
+color: #fff;
+}
+
+.bilhete {
+border: 1px solid #ccc;
+padding: 10px;
+text-align: center;
+}
+
+.bilhete img {
+max-width: 100%;
+height: auto;
+}
+
+.add{
+font-size: 15px;
+color: #fff;
+background-color: #ffc138;
+text-decoration: none;
+padding: 10px;
+}
+
+.add:hover{
+background-color: #e89d10;
 }
