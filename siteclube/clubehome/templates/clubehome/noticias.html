@@ -34,7 +34,6 @@
     <main>
         {% if user.userdetails.is_admin and user.is_authenticated  %}
             <a href="{% url 'criar_noticia' %}"><button>Criar Notícia</button></a>
-            <a href="{% url 'criar_jogo' %}"><button>Criar Jogo</button></a>
         {% endif %}
 
             {% for noticia in ultimas_noticias %}

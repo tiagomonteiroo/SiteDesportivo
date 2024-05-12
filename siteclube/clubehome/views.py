@@ -58,7 +58,7 @@ def criar_jogo(request):
         local = request.POST.get('local')
         data_jogo = request.POST.get('data_jogo')
         Jogo.objects.create(adversario=adversario, golos_clube=golos_clube, golos_adversario=golos_adversario, local=local,data_jogo=data_jogo)
-        return redirect('noticias')
+        return redirect('homepage')
     return render(request, 'clubehome/criar_jogo.html')
 
 def criar_jogador(request):
