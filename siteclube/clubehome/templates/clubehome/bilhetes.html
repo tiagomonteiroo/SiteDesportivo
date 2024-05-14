@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BILHETES | Site Oficial do Glu Glu Futebol Clube</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'bilhetes.css' %}">
+    <link rel="stylesheet" href="{% static 'bilhetes2.css' %}">
 </head>
 <body>
 <header>
@@ -30,6 +30,7 @@
             </nav>
         </div>
     </header>
+<main>
 <div>
 {% if user.is_authenticated and user.userdetails.is_admin %}
 <a href="{% url 'criarbilhete' %}" class="add">Criar Bilhete</a>
@@ -48,6 +49,15 @@
         {% endfor %}
     </div>
 </div>
+</main>
+    <footer>
+        <div class="contact-box">
+            <h3>Contactos</h3>
+            <p>Email: info@gluglufc.com</p>
+            <p>Telefone: +123456789</p>
+            <p>Endereço: Rua do Futebol, Glugluvillage</p>
+        </div>
+    </footer>
 
 </body>
 </html>

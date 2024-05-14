@@ -35,6 +35,7 @@
         <div class="linha">
             {% if user.userdetails.is_admin and user.is_authenticated  %}
                 <a href="{% url 'criar_noticia' %}" class="creation">Criar Notícia</a>
+                <a href="{% url 'eliminar_noticia' %}" class="creation">Eliminar Notícia</a>
             {% endif %}
         </div>
 
@@ -44,6 +45,9 @@
                     <div class="news-content">
                         <h2 class="news-title">{{ noticia.titulo }}</h2>
                         <p class="news-description">{{ noticia.descricao }}</p>
+                        {% if user.userdetails.is_admin and user.is_authenticated  %}
+                            <p>Codigo da Notícia: {{ noticia.id }}</p>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

@@ -101,3 +101,28 @@ nav {
     .add:hover{
     background-color: #e89d10;
 }
+
+footer {
+    background-color: #121f27;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    width: 200px;
+}
+
+.contact-box {
+    max-width: 200px;
+}
+
+.contact-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}

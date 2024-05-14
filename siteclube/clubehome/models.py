@@ -23,7 +23,7 @@ class Noticia(models.Model):
     def save(self, *args, **kwargs):
         if not self.pk:
             existing_news_count = Noticia.objects.count()
-            filename = f'noticia{existing_news_count + 1}.png'
+            filename = f'noticia_{existing_news_count + 1}.png'
             self.imagem.name = os.path.join('noticias', filename)
             self.imagem_nome = filename
         super().save(*args, **kwargs)
@@ -88,14 +88,7 @@ class Venda(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     produtos = models.ManyToManyField(Product)
 
-class Bilhete (Product):
-    equipa_fora=models.CharField(max_length=255)
-    equipa_casa=models.CharField(max_length=255)
-    data= models.DateField()
-
-
-class Bilhete (Product):
-    equipa_fora=models.CharField(max_length=255)
-    equipa_casa=models.CharField(max_length=255)
-    data= models.DateField()
-
+class Bilhete(Product):
+    equipa_fora = models.CharField(max_length=255)
+    equipa_casa = models.CharField(max_length=255)
+    data = models.DateField()

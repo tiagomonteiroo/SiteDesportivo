@@ -93,7 +93,7 @@ def ultimas_noticias(request):
 
 def loja(request):
     produtos = Product.objects.all()
-    context = {'produtos' : produtos}
+    context = {'produtos': produtos}
     return render(request, "clubehome/loja.html", context)
 
 def criar_produto (request):
@@ -122,6 +122,30 @@ def eliminar_noticia(request):
         noticia_to_delete.delete()
         return redirect('homepage')
     return render(request, 'clubehome/eliminar_noticia.html')
+
+def eliminar_jogo(request):
+    if request.method == 'POST':
+        id_jogo = request.POST.get("cod")
+        jogo_to_delete = Jogo.objects.filter(id=id_jogo)
+        jogo_to_delete.delete()
+        return redirect('homepage')
+    return render(request, 'clubehome/eliminar_jogo.html')
+
+def eliminar_jogador(request):
+    if request.method == 'POST':
+        id_jogador = request.POST.get("cod")
+        jogador_to_delete = Player.objects.filter(id=id_jogador)
+        jogador_to_delete.delete()
+        return redirect('plantel')
+    return render(request, 'clubehome/eliminar_jogador.html')
+
+def eliminar_treinador(request):
+    if request.method == 'POST':
+        id_treinador = request.POST.get("cod")
+        treinador_to_delete = Coach.objects.filter(id=id_treinador)
+        treinador_to_delete.delete()
+        return redirect('plantel')
+    return render(request, 'clubehome/eliminar_treinador.html')
 
 def adicionar_carrinho (request, product_id):
         try:
@@ -186,7 +210,7 @@ def plantel(request):
 
 def bilhetes(request):
     bilhetes = Bilhete.objects.all()
-    return render(request, "clubehome/bilhetes.html", {'bilhetes' : bilhetes})
+    return render(request, "clubehome/bilhetes.html", {'bilhetes': bilhetes})
 
 
 def criar_bilhete(request):
@@ -198,19 +222,11 @@ def criar_bilhete(request):
         equipa_fora = request.POST.get('equipa_fora')
         equipa_casa = request.POST.get('equipa_casa')
         data = request.POST.get('data')
-
         Bilhete.objects.create(nome=nome, tipo=tipo, preco=preco,cod_produto=cod ,equipa_casa=equipa_casa, equipa_fora=equipa_fora,
                                data=data)
-
         return redirect('bilhetes')
     else:
         return render(request, 'clubehome/criar_bilhete.html')
-
-
-
-
-def noticias(request):
-    return render(request, "clubehome/noticias.html")
 
 def clube(request):
     return render(request, "clubehome/clube.html")

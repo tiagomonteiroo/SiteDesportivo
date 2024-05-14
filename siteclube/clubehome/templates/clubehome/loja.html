@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Loja | Site Oficial do Glu Glu Futebol Clube</title>
     {% load static %}
-       <link rel="stylesheet" href="{% static 'loja_final.css' %}">
+       <link rel="stylesheet" href="{% static 'loja_final2.css' %}">
 </head>
 <body>
      <header>
@@ -56,7 +56,7 @@
 
                 <p>Preço: {{ product.preco }} €</p>
                 <p>Tipo: {{ product.tipo }}</p>
-                {% if user.is_authenticated and user.userdetais.is_admin %}
+                {% if user.userdetails.is_admin and user.is_authenticated  %}
                 <p>Codigo do Produto: {{ product.cod_produto }}</p>
                 {% endif %}
                 {% if user.is_authenticated %}
@@ -66,7 +66,14 @@
             {% endfor %}
         </div>
 </main>
-
+    <footer>
+        <div class="contact-box">
+            <h3>Contactos</h3>
+            <p>Email: info@gluglufc.com</p>
+            <p>Telefone: +123456789</p>
+            <p>Endereço: Rua do Futebol, Glugluvillage</p>
+        </div>
+    </footer>
 
 </body>
 </html>

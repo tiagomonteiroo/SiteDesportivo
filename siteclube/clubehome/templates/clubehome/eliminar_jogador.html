@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Eliminar Notícia | Site Oficial do Glu Glu Futebol Clube</title>
+    <title>Eliminar Jogador | Site Oficial do Glu Glu Futebol Clube</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'login2.css' %}"/>
 </head>
@@ -12,14 +12,14 @@
         <img src="{% static 'logo.png' %}" alt="logotipo">
         </a>
 
-        <h2>Eliminar Notícia</h2>
+        <h2>Eliminar Jogador</h2>
 
         <form method="post">
             {% csrf_token %}
-            <label for="cod">Código do Produto: </label><br>
+            <label for="cod">Código do Jogador: </label><br>
             <input type="number" id="cod" name="cod" required><br>
 
-            <button type="submit">Eliminar Produto</button>
+            <button type="submit">Eliminar Jogador</button>
         </form>
     </div>
 </body>

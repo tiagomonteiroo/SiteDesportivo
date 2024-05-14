@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Jogo | Site Oficial do Glu Glu Futebol Clube</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login2.css' %}"/>
+</head>
+<body>
+<div class="centered">
+        <a href="{% url 'homepage' %}">
+        <img src="{% static 'logo.png' %}" alt="logotipo">
+        </a>
+
+        <h2>Eliminar Jogo</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="cod">Código do Jogo: </label><br>
+            <input type="number" id="cod" name="cod" required><br>
+
+            <button type="submit">Eliminar Jogo</button>
+        </form>
+    </div>
+</body>
+</html>

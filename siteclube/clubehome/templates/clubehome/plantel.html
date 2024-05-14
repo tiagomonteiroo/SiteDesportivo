@@ -34,7 +34,9 @@
         <div class="linha">
             {% if user.userdetails.is_admin and user.is_authenticated  %}
                 <a href="{% url 'criar_jogador' %}" class="creation">Criar Jogador</a>
+                <a href="{% url 'eliminar_jogador' %}" class="creation">Eliminar Jogador</a>
                 <a href="{% url 'criar_treinador' %}" class="creation">Criar Treinador</a>
+                <a href="{% url 'eliminar_treinador' %}" class="creation">Eliminar Treinador</a>
             {% endif %}
         </div>
         <br>
@@ -48,6 +50,9 @@
                     <p>Função: {{ treinador.job }}</p>
                     <p>Idade: {{ treinador.age }}</p>
                     <p>Hierarquia: {% if treinador.main %}Principal{% else %}Não Principal{% endif %}</p>
+                    {% if user.userdetails.is_admin and user.is_authenticated  %}
+                        <p>Codigo do Treinador: {{ treinador.id }}</p>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
@@ -63,6 +68,9 @@
                         <p>Número: {{ jogador.number }}</p>
                         <p>Posição: {{ jogador.position }}</p>
                         <p>Idade: {{ jogador.age }}</p>
+                        {% if user.userdetails.is_admin and user.is_authenticated  %}
+                            <p>Codigo do Jogador: {{ jogador.id }}</p>
+                        {% endif %}
                     </div>
                 {% endif %}
             {% endfor %}
@@ -78,6 +86,9 @@
                         <p>Número: {{ jogador.number }}</p>
                         <p>Posição: {{ jogador.position }}</p>
                         <p>Idade: {{ jogador.age }}</p>
+                        {% if user.userdetails.is_admin and user.is_authenticated  %}
+                            <p>Codigo do Jogador: {{ jogador.id }}</p>
+                        {% endif %}
                     </div>
                 {% endif %}
             {% endfor %}
@@ -93,6 +104,9 @@
                         <p>Número: {{ jogador.number }}</p>
                         <p>Posição: {{ jogador.position }}</p>
                         <p>Idade: {{ jogador.age }}</p>
+                        {% if user.userdetails.is_admin and user.is_authenticated  %}
+                            <p>Codigo do Jogador: {{ jogador.id }}</p>
+                        {% endif %}
                     </div>
                 {% endif %}
             {% endfor %}
@@ -108,6 +122,9 @@
                         <p>Número: {{ jogador.number }}</p>
                         <p>Posição: {{ jogador.position }}</p>
                         <p>Idade: {{ jogador.age }}</p>
+                        {% if user.userdetails.is_admin and user.is_authenticated  %}
+                            <p>Codigo do Jogador: {{ jogador.id }}</p>
+                        {% endif %}
                     </div>
                 {% endif %}
             {% endfor %}
@@ -123,6 +140,9 @@
                         <p>Número: {{ jogador.number }}</p>
                         <p>Posição: {{ jogador.position }}</p>
                         <p>Idade: {{ jogador.age }}</p>
+                        {% if user.userdetails.is_admin and user.is_authenticated  %}
+                            <p>Codigo do Jogador: {{ jogador.id }}</p>
+                        {% endif %}
                     </div>
                 {% endif %}
             {% endfor %}
@@ -138,6 +158,9 @@
                         <p>Número: {{ jogador.number }}</p>
                         <p>Posição: {{ jogador.position }}</p>
                         <p>Idade: {{ jogador.age }}</p>
+                        {% if user.userdetails.is_admin and user.is_authenticated  %}
+                            <p>Codigo do Jogador: {{ jogador.id }}</p>
+                        {% endif %}
                     </div>
                 {% endif %}
             {% endfor %}
